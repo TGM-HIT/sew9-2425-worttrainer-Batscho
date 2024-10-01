@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class WortListe {
+- wortListe : HashMap<String, String>
+
++ WortListe()
++ WortListe(wort : String, url : String)
++ addWortEintrag(wort : String, url : String) : void
++ delWortEintrag(wort : String) : boolean
++ getWortEintrag(wort : String) : String[2]
++ getWortListe(wort: String) : HashMap<String, String>
++ setWortListe(wortListe : HashMap<String, String>) : void
++ showWortListe(): void
++ length() : int
+}
+
+@enduml
