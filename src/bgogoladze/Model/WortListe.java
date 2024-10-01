@@ -1,5 +1,6 @@
 package bgogoladze.Model;
 
+import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,10 +33,7 @@ public class WortListe {
      */
     WortListe(String wort, String url) {
         this();         // Initialisiert die wortListe-Map durch den Standardkonstruktor
-        if(wort != null && url != null && !wort.isEmpty() && !url.isEmpty())
-            this.wortListe.put(wort, url);
-        else
-            throw new IllegalArgumentException("Wort und Bild-URL dürfen nicht null oder leer sein.");
+        this.addWortEintrag(wort, url);
     }
 
     /**
@@ -50,7 +48,7 @@ public class WortListe {
      * Diese setter-Methode setWortListe ist die Zugriffsmethode zum setzen eines neuen Wort-Bild Paares
      * @param wortListe ist die zu setzende WortListe
      */
-    public void setWortListe(HashMap<String, String> wortListe) {
+    public void setWortListe(Map<String, String> wortListe) {
         if(wortListe != null) this.wortListe = wortListe;
         else throw new NullPointerException("Die zu setzende WortListe ist ungültig (null)!");
     }
@@ -61,13 +59,46 @@ public class WortListe {
      * @return den einen String Array Eintrag aus dem Wort und der URL
      */
     public String[] getWortEintrag(String wort) {
-        if((wort != null && !wort.isEmpty()) && this.wortListe.containsKey(wort)) {
-            String[] eintrag = new String[2];
-            eintrag[0] = wort;                   // Das Wort (Key) wird gespeichert
-            eintrag[1] = this.wortListe.get(wort);    // Die zugehörige URL (Value) wird gespeichert
-            return eintrag;
-        } else {
-            throw new IllegalArgumentException("Das Wort '" + wort + "' ist nicht in der Map enthalten!");
-        }
+        if(wort == null || wort.isEmpty() || !this.wortListe.containsKey(wort))
+            throw new IllegalArgumentException(String.format("Das Wort '%s' ist nicht in der Map enthalten!", wort));
+        return new String[]{wort, this.wortListe.get(wort)};
+    }
+
+    /**
+     * Diese Methode addWortEintrag ist zum hinzufügen von Schlüssel-Wert Paaren zur Map
+     * @param wort ist der Key in der Map, also das Wort
+     * @param url ist der Value in der Map, also die URL
+     */
+    public void addWortEintrag(String wort, String url) {
+        if(wort != null && url != null && !wort.isEmpty() && !url.isEmpty()) this.wortListe.put(wort, url);
+        else throw new IllegalArgumentException("Das Wort oder das Bild dürfen nicht null oder leer sein!");
+    }
+
+
+    /**
+     * Diese Methode delWortEIntrag löscht das Wort und die zugehörige URL aus der Map
+     * wenn das Wort überhaupt vorhanden ist
+     * @param wort ist das zu löschende Wort
+     * @return ob das Löschen erfolgreich war
+     */
+    public boolean delWortEintrag(String wort) {
+        return (wort != null && !wort.isEmpty()) && this.wortListe.remove(wort) != null;
+    }
+
+    /**
+     * Diese Methode showWortListe gibt die Key-Value Paare als ein JSON in der Kommandozeile aus
+     * um zu sehen was die vorhandenen Worte und die zugehörigen URLs sind.
+     */
+    public void showWortListe() {
+        JSONObject json = new JSONObject(this.wortListe);
+        System.out.println(json.toString(2));
+    }
+
+    /**
+     * Diese Methode length gibt die Länge der Map zurück
+     * @return den Integer Wert der Länge von der WortListe.
+     */
+    public int length() {
+        return this.wortListe.size();
     }
 }
