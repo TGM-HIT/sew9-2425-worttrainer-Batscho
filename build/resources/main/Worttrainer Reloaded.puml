@@ -3,7 +3,7 @@
 
 
 class WortListe {
-- wortListe : HashMap<String, String>
+- wortListe : Map<String, String>
 
 + WortListe()
 + WortListe(wort : String, url : String)

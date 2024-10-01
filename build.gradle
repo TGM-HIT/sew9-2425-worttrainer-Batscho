@@ -9,11 +9,11 @@ repositories {
     mavenCentral()
 }
 sourceSets {
-    main(({
+    main {
         java {
             srcDirs = ['src']
         }
-    } as String))
+    }
 }
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')

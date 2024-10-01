@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"bgogoladze.Model","c":"WortListe","l":"getWortEintrag(String)","u":"getWortEintrag(java.lang.String)"},{"p":"bgogoladze.Model","c":"WortListe","l":"getWortListe()"},{"p":"bgogoladze.Model","c":"WortListe","l":"setWortListe(HashMap<String, String>)","u":"setWortListe(java.util.HashMap)"}];updateSearchResults();

@@ -18,7 +18,7 @@ zu zeigen und Feature für Feature durchzugehen und umzusetzen mit:
 + Schritt 4: Zyklus wiederholen
 
 ## Klassen-Hierarchie
-+ Model
++ bgogoladze.Model
   + WortListe
 
 ## Verwendete Technologien
