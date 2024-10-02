@@ -38,7 +38,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li>Verschachtelt</li>
 <li>Feld</li>
-<li>Konstruktor</li>
+<li><a href="#constructor-summary">Konstruktor</a></li>
 <li><a href="#method-summary">Methode</a></li>
 </ul>
 </li>
@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <p>Details:</p>
 <ul>
 <li>Feld</li>
-<li>Konstruktor</li>
+<li><a href="#constructor-detail">Konstruktor</a></li>
 <li><a href="#method-detail">Methode</a></li>
 </ul>
 </li>
@@ -58,13 +58,13 @@ loadScripts(document, 'script');</script>
 <li>Übersicht:&nbsp;</li>
 <li>Verschachtelt&nbsp;|&nbsp;</li>
 <li>Feld&nbsp;|&nbsp;</li>
-<li>Konstruktor&nbsp;|&nbsp;</li>
+<li><a href="#constructor-summary">Konstruktor</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Methode</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Details:&nbsp;</li>
 <li>Feld&nbsp;|&nbsp;</li>
-<li>Konstruktor&nbsp;|&nbsp;</li>
+<li><a href="#constructor-detail">Konstruktor</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Methode</a></li>
 </ul>
 </div>
@@ -99,6 +99,28 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<li>
+<section class="constructor-summary" id="constructor-summary">
+<h2>Konstruktorübersicht</h2>
+<div class="caption"><span>Konstruktoren</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Konstruktor</div>
+<div class="table-header col-last">Beschreibung</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">WortListe</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Der Standartkonstrukor für die WortListe, welche eine leere HashMap initialisiert
+ und sowohl als Key (Wort) einen String speichert und als Value (URL) auch</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String)" class="member-name-link">WortListe</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;wort,
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Dies ist der Erweiterte Konstruktor zu welchem man bereits ein Wort-Bild Paare hinzufügen
+ kann welches valide ist.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -115,6 +137,16 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Diese Methode addWortEintrag ist zum hinzufügen von Schlüssel-Wert Paaren zur Map</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkUrl(java.lang.String)" class="member-name-link">checkUrl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Diese Methode checkUrl dient zum Checken der Validität der URL</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkWort(java.lang.String)" class="member-name-link">checkWort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;wort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Diese Methode checkWort checkt den Parameter auf null-Werte oder ob es ein leerer String ist.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#delWortEintrag(java.lang.String)" class="member-name-link">delWortEintrag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;wort)</code></div>
@@ -160,6 +192,36 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<li>
+<section class="constructor-details" id="constructor-detail">
+<h2>Konstruktordetails</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>WortListe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">WortListe</span>()</div>
+<div class="block">Der Standartkonstrukor für die WortListe, welche eine leere HashMap initialisiert
+ und sowohl als Key (Wort) einen String speichert und als Value (URL) auch</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String)">
+<h3>WortListe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">WortListe</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;wort,
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</span></div>
+<div class="block">Dies ist der Erweiterte Konstruktor zu welchem man bereits ein Wort-Bild Paare hinzufügen
+ kann welches valide ist.</div>
+<dl class="notes">
+<dt>Parameter:</dt>
+<dd><code>wort</code> - ist die Bedeutung vom Bild, das Wort</dd>
+<dd><code>url</code> - ist das Bild selbst als URL</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -243,6 +305,32 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Gibt zurück:</dt>
 <dd>den Integer Wert der Länge von der WortListe.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="checkWort(java.lang.String)">
+<h3>checkWort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkWort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;wort)</span></div>
+<div class="block">Diese Methode checkWort checkt den Parameter auf null-Werte oder ob es ein leerer String ist.</div>
+<dl class="notes">
+<dt>Parameter:</dt>
+<dd><code>wort</code> - ist der Parameter der gecheckt werden soll</dd>
+<dt>Gibt zurück:</dt>
+<dd>ob der Check erfolgreich war</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="checkUrl(java.lang.String)">
+<h3>checkUrl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkUrl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</span></div>
+<div class="block">Diese Methode checkUrl dient zum Checken der Validität der URL</div>
+<dl class="notes">
+<dt>Parameter:</dt>
+<dd><code>url</code> - ist der Parameter (die URL) welche gecheckt werden soll</dd>
+<dt>Gibt zurück:</dt>
+<dd>den Boolean Wert ob der Check erfolgreich war</dd>
 </dl>
 </section>
 </li>
