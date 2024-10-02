@@ -1,6 +1,6 @@
 package bgogoladze.Model;
 
-import org.json.JSONObject;
+import com.google.gson.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,8 +90,9 @@ public class WortListe {
      * um zu sehen was die vorhandenen Worte und die zugehörigen URLs sind.
      */
     public void showWortListe() {
-        JSONObject json = new JSONObject(this.wortListe);
-        System.out.println(json.toString(2));
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();  // GsonBuilder mit Pretty-Print
+        String json = gson.toJson(this.wortListe);                   // Map in JSON umwandeln
+        System.out.println(json);                                    // Ausgabe des formatierten JSON-Strings im Pretty Format
     }
 
     /**
@@ -101,4 +102,15 @@ public class WortListe {
     public int length() {
         return this.wortListe.size();
     }
+
+    /**
+     * Diese Methode checkWort checkt den Parameter auf null-Werte oder ob es ein leerer String ist.
+     * @param wort ist der Parameter der gecheckt werden soll
+     * @return ob der Check erfolgreich war
+     */
+    public boolean checkWort(String wort) {
+        if (wort == null || wort.isEmpty()) throw new IllegalArgumentException("Das Wort darf weder null, noch leer sein!");
+        return true;
+    }
+
 }
