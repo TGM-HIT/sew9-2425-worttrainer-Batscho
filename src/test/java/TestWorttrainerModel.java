@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 public class TestWorttrainerModel {
     private WortListe wortListe;
+    private WortListe wortListe2 = new WortListe("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
 
     @BeforeEach
     public void setup() {
@@ -34,6 +35,14 @@ public class TestWorttrainerModel {
     @DisplayName("U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert")
     public void show() {
         this.wortListe.addWortEintrag("Papagei", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vetline.de%2Fbitte-abdunkeln-so-schlafen-wellensittiche-besser&psig=AOvVaw2hwxvnhElmDjiWnhOSq5q-&ust=1727960711856000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsvrjh74gDFQAAAAAdAAAAABAE");
-        assertEquals("{\n  \"Papagei\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vetline.de%2Fbitte-abdunkeln-so-schlafen-wellensittiche-besser&psig=AOvVaw2hwxvnhElmDjiWnhOSq5q-&ust=1727960711856000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsvrjh74gDFQAAAAAdAAAAABAE\"\n}", this.wortListe.showWortListe(), "dd");
+        assertEquals("{\n  \"Papagei\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vetline.de%2Fbitte-abdunkeln-so-schlafen-wellensittiche-besser&psig=AOvVaw2hwxvnhElmDjiWnhOSq5q-&ust=1727960711856000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsvrjh74gDFQAAAAAdAAAAABAE\"\n}", this.wortListe.showWortListe(), "Die WortListe zeigt nicht denselben Output im Json-Format");
     }
+
+    @Test
+    @DisplayName("U03 - Testen, ob der setter der WortListe funktioniert")
+    public void addingMatching() {
+        this.wortListe.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
+        assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die zweite Wortliste ist nicht dieselbe, obwohl zur leeren WortListe genau das eine Element abgegeben wurde");
+    }
+
 }

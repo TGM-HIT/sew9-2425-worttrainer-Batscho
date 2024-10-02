@@ -93,9 +93,9 @@ public class WortListe {
      * um zu sehen was die vorhandenen Worte und die zugehörigen URLs sind.
      */
     public String showWortListe() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();  // GsonBuilder mit Pretty-Print
-        String json = gson.toJson(this.wortListe);                   // Map in JSON umwandeln
-        return json;                                    // Ausgabe des formatierten JSON-Strings im Pretty Format
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(this.wortListe);
+        return json.replace("\\u0026", "&").replace("\\u003d", "=");
     }
 
     /**
