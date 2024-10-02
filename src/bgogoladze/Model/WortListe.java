@@ -3,6 +3,7 @@ package bgogoladze.Model;
 import com.google.gson.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * Diese Klasse namens WortListe beinhaltet einen einen Standartkonstruktor, einen weiteren Konstruktor mit bereits
@@ -59,7 +60,7 @@ public class WortListe {
      * @return den einen String Array Eintrag aus dem Wort und der URL
      */
     public String[] getWortEintrag(String wort) {
-        if(wort == null || wort.isEmpty() || !this.wortListe.containsKey(wort))
+        if(!checkWort(wort) || !this.wortListe.containsKey(wort))
             throw new IllegalArgumentException(String.format("Das Wort '%s' ist nicht in der Map enthalten!", wort));
         return new String[]{wort, this.wortListe.get(wort)};
     }
@@ -70,8 +71,8 @@ public class WortListe {
      * @param url ist der Value in der Map, also die URL
      */
     public void addWortEintrag(String wort, String url) {
-        if(wort != null && url != null && !wort.isEmpty() && !url.isEmpty()) this.wortListe.put(wort, url);
-        else throw new IllegalArgumentException("Das Wort oder das Bild dürfen nicht null oder leer sein!");
+        if(!checkWort(wort) || !checkUrl(url))  throw new IllegalArgumentException("Das Wort oder die URL dürfen nicht null, leer oder invalide sein!");
+        this.wortListe.put(wort, url);
     }
 
 
@@ -82,7 +83,7 @@ public class WortListe {
      * @return ob das Löschen erfolgreich war
      */
     public boolean delWortEintrag(String wort) {
-        return (wort != null && !wort.isEmpty()) && this.wortListe.remove(wort) != null;
+        return (checkWort(wort) && this.wortListe.containsKey(wort)) && this.wortListe.remove(wort) != null;
     }
 
     /**
@@ -113,4 +114,14 @@ public class WortListe {
         return true;
     }
 
+    /**
+     * Diese Methode checkUrl dient zum Checken der Validität der URL
+     * @param url ist der Parameter (die URL) welche gecheckt werden soll
+     * @return den Boolean Wert ob der Check erfolgreich war
+     */
+    public boolean checkUrl(String url) {
+        if (url == null || url.isEmpty()) throw new IllegalArgumentException("Die URL darf weder null, noch leer sein!");
+        Pattern URL_PATTERN = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
+        return URL_PATTERN.matcher(url).matches();
+    }
 }
