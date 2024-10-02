@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestWorttrainerModel" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-02T14:24:33" hostname="LAPTOP-0KEN8UFH" time="0.045">
+  <properties/>
+  <testcase name="U01 - Eine WortListe welche aus invaliden Zeichen besteht wirft eine Exception" classname="TestWorttrainerModel" time="0.038"/>
+  <testcase name="U01 - Eine WortListe welche aus invaliden Zeichen besteht wirft eine Exception" classname="TestWorttrainerModel" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -3,8 +3,8 @@
 
 
 class WortListe {
-- wortListe : Map<String, String>
-
+- wortListe: Map<String, String>
+- {static} URL_PATTERN: Pattern
 + WortListe()
 + WortListe(wort : String, url : String)
 + addWortEintrag(wort : String, url : String) : void
@@ -13,7 +13,9 @@ class WortListe {
 + getWortListe(wort: String) : Map<String, String>
 + setWortListe(wortListe : Map<String, String>) : void
 + showWortListe(): void
-+ length() : int
++ length(): int
++ checkWort(wort: String): boolean
++ checkUrl(url: String): boolean
 }
 
 @enduml
