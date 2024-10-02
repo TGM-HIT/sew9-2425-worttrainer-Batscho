@@ -21,7 +21,7 @@ public class WortListe {
      * Der Standartkonstrukor für die WortListe, welche eine leere HashMap initialisiert
      * und sowohl als Key (Wort) einen String speichert und als Value (URL) auch
      */
-    WortListe() {
+    public WortListe() {
         this.wortListe = new HashMap<String, String>();
     }
 
@@ -31,7 +31,7 @@ public class WortListe {
      * @param wort ist die Bedeutung vom Bild, das Wort
      * @param url  ist das Bild selbst als URL
      */
-    WortListe(String wort, String url) {
+    public WortListe(String wort, String url) {
         this();         // Initialisiert die wortListe-Map durch den Standardkonstruktor
         this.addWortEintrag(wort, url);
     }
