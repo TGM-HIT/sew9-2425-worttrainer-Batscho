@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
  */
 public class WortListe {
     private Map<String, String> wortListe;          // Eine Map-Collection zum Speichern der Wort-Bild Paare
+    private static final Pattern URL_PATTERN = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"); // Das Pattern für die Url
 
     /**
      * Der Standartkonstrukor für die WortListe, welche eine leere HashMap initialisiert
@@ -34,6 +35,7 @@ public class WortListe {
      */
     public WortListe(String wort, String url) {
         this();         // Initialisiert die wortListe-Map durch den Standardkonstruktor
+        if(!checkWort(wort) || !checkUrl(url)) throw new IllegalArgumentException("Weder das Wort, noch die URL dürfen invalide, null oder leer sein!");
         this.addWortEintrag(wort, url);
     }
 
@@ -121,7 +123,6 @@ public class WortListe {
      */
     public boolean checkUrl(String url) {
         if (url == null || url.isEmpty()) throw new IllegalArgumentException("Die URL darf weder null, noch leer sein!");
-        Pattern URL_PATTERN = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
         return URL_PATTERN.matcher(url).matches();
     }
 }
