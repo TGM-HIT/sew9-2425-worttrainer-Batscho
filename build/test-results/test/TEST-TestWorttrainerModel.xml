@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestWorttrainerModel" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-02T15:07:39" hostname="LAPTOP-0KEN8UFH" time="0.073">
+<testsuite name="TestWorttrainerModel" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-02T15:15:54" hostname="LAPTOP-0KEN8UFH" time="0.091">
   <properties/>
-  <testcase name="U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert" classname="TestWorttrainerModel" time="0.073"/>
+  <testcase name="U04 - Testen, ob der getter der WortListe auch einwandfrei funktioniert" classname="TestWorttrainerModel" time="0.027"/>
+  <testcase name="U03 - Testen, ob das Adden von neuen Einträgen auch funktioniert wie gewollt" classname="TestWorttrainerModel" time="0.046"/>
+  <testcase name="U05 - Testen, ob der setter der WortListe auch einwandfrei funktioniert" classname="TestWorttrainerModel" time="0.003"/>
+  <testcase name="U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert" classname="TestWorttrainerModel" time="0.003"/>
+  <testcase name="U01 - Eine WortListe welche aus invaliden Zeichen besteht wirft eine Exception" classname="TestWorttrainerModel" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

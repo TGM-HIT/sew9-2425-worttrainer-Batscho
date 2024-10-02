@@ -39,10 +39,23 @@ public class TestWorttrainerModel {
     }
 
     @Test
-    @DisplayName("U03 - Testen, ob der setter der WortListe funktioniert")
+    @DisplayName("U03 - Testen, ob das Adden von neuen Einträgen auch funktioniert wie gewollt")
     public void addingMatching() {
         this.wortListe.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
         assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die zweite Wortliste ist nicht dieselbe, obwohl zur leeren WortListe genau das eine Element abgegeben wurde");
+    }
+
+    @Test
+    @DisplayName("U04 - Testen, ob der getter der WortListe auch einwandfrei funktioniert")
+    public void getterTest() {
+        assertEquals(this.wortListe2.getWortListe(), this.wortListe2.getWortListe(), "Die zweite Wortliste ist nicht dieselbe wie die vom getter zurückgegebene Liste");
+    }
+
+    @Test
+    @DisplayName("U05 - Testen, ob der setter der WortListe auch einwandfrei funktioniert")
+    public void setterTest() {
+        this.wortListe.setWortListe(this.wortListe2.getWortListe());
+        assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die erste WortListe wurde auf die zweite gesetzt, jedoch sin diese im Vergleich nicht dieselben");
     }
 
 }
