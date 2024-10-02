@@ -12,7 +12,7 @@ class WortListe {
 + getWortEintrag(wort : String) : String[2]
 + getWortListe(wort: String) : Map<String, String>
 + setWortListe(wortListe : Map<String, String>) : void
-+ showWortListe(): void
++ showWortListe(): String
 + length(): int
 + checkWort(wort: String): boolean
 + checkUrl(url: String): boolean

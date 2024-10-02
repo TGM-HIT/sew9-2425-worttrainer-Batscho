@@ -31,9 +31,9 @@ public class TestWorttrainerModel {
     }
 
     @Test
-    @DisplayName("U02 - ")
+    @DisplayName("U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert")
     public void show() {
         this.wortListe.addWortEintrag("Papagei", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vetline.de%2Fbitte-abdunkeln-so-schlafen-wellensittiche-besser&psig=AOvVaw2hwxvnhElmDjiWnhOSq5q-&ust=1727960711856000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsvrjh74gDFQAAAAAdAAAAABAE");
-        assertEquals("[", );
+        assertEquals("{\n  \"Papagei\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vetline.de%2Fbitte-abdunkeln-so-schlafen-wellensittiche-besser&psig=AOvVaw2hwxvnhElmDjiWnhOSq5q-&ust=1727960711856000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsvrjh74gDFQAAAAAdAAAAABAE\"\n}", this.wortListe.showWortListe(), "dd");
     }
 }

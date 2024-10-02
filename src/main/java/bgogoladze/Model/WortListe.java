@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class WortListe {
     private Map<String, String> wortListe;          // Eine Map-Collection zum Speichern der Wort-Bild Paare
-    private static final Pattern URL_PATTERN = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"); // Das Pattern für die Url
+    private static final Pattern URL_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)"); // Das Pattern für die Url
 
     /**
      * Der Standartkonstrukor für die WortListe, welche eine leere HashMap initialisiert
@@ -92,10 +92,10 @@ public class WortListe {
      * Diese Methode showWortListe gibt die Key-Value Paare als ein JSON in der Kommandozeile aus
      * um zu sehen was die vorhandenen Worte und die zugehörigen URLs sind.
      */
-    public void showWortListe() {
+    public String showWortListe() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();  // GsonBuilder mit Pretty-Print
         String json = gson.toJson(this.wortListe);                   // Map in JSON umwandeln
-        System.out.println(json);                                    // Ausgabe des formatierten JSON-Strings im Pretty Format
+        return json;                                    // Ausgabe des formatierten JSON-Strings im Pretty Format
     }
 
     /**
