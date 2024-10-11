@@ -8,6 +8,7 @@ WortTrainer "1" o-> "1" WortListe : - wortListe
 SpeichernUndLaden "*" --> "1" WortTrainer
 SpeichernUndLaden ..|> SpeichernUndLadenStrategie : <implements>
 WortFrame --|> JFrame
+WortPanel --|> JPanel
 
 package Model {
 class WortListe {
@@ -88,6 +89,22 @@ class WortFrame {
 - menubar() : JMenuBar
 + {static} main(args : Strins[]) : void
 }
-class JFrame{}
+class WortPanel {
+- wortController: WortController
+- bAdd: JButton
+- bReset: JButton
+- textField: JTextField
+- image: JLabel
+- question: JLabel
+- correct: JLabel
+- amount: JLabel
+- correctCounter: JLabel
+- amountCounter: JLabel
++ WortPanel(wortController: WortController, picture: ImageIcon, correct: int, amount: int)
++ setImage(picture: ImageIcon): void
++ getTextfield(): String
++ refresh(isCorrect: boolean, correctCounter: int, amountCounter: int, picture: ImageIcon): void
++ reset(): void
+}
 }
 @enduml
