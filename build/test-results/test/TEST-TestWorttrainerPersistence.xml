@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestWorttrainerPersistence" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-11T18:38:31" hostname="LAPTOP-0KEN8UFH" time="0.091">
+  <properties/>
+  <testcase name="Test: Laden einer gespeicherten WortTrainer-Session" classname="TestWorttrainerPersistence" time="0.091"/>
+  <system-out><![CDATA[WortTrainer Session erfolgreich gespeichert unter: src/main/resources/worttrainer_session.json
+WortTrainer Session erfolgreich geladen
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

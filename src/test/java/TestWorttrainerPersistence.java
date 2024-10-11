@@ -39,6 +39,7 @@ public class TestWorttrainerPersistence {
             file.delete();
         }
     }
+
     @Test
     @DisplayName("U01 - Testen, ob das Speichern einer WortTrainer-Session überhaupt funktioniert")
     void speichernTest() {
@@ -50,4 +51,15 @@ public class TestWorttrainerPersistence {
         assertTrue(savedFile.exists(), "Die Datei sollte nach dem Speichern doch eigentlich existieren oder?");
     }
 
+    @Test
+    @DisplayName("Test: Laden einer gespeicherten WortTrainer-Session")
+    void testLaden() {
+        this.wortTrainer.setAbgefragt(100);
+        this.wortTrainer.setKorrekt(99);
+        this.speichernUndLaden.speichern(this.wortTrainer);
+        WortTrainer loadedWortTrainer = this.speichernUndLaden.laden();
+
+        assertEquals(100, loadedWortTrainer.getAbgefragt(), "Die Anzahl der abgefragten Wörter sollte doch gleich sein wie die gespeicherte json?");
+        assertEquals(99, loadedWortTrainer.getKorrekt(), "Die Anzahl der korrekt beantworteten Wörter sollte doch auch gleich sein wie in der json-Datei?");
+    }
 }
