@@ -52,8 +52,8 @@ public class TestWorttrainerPersistence {
     }
 
     @Test
-    @DisplayName("Test: Laden einer gespeicherten WortTrainer-Session")
-    void testLaden() {
+    @DisplayName("U02 - Testen der Laden-Funktion einer gespeicherten WortTrainer-Session")
+    void ladenTest() {
         this.wortTrainer.setAbgefragt(100);
         this.wortTrainer.setKorrekt(99);
         this.speichernUndLaden.speichern(this.wortTrainer);
@@ -61,5 +61,19 @@ public class TestWorttrainerPersistence {
 
         assertEquals(100, loadedWortTrainer.getAbgefragt(), "Die Anzahl der abgefragten Wörter sollte doch gleich sein wie die gespeicherte json?");
         assertEquals(99, loadedWortTrainer.getKorrekt(), "Die Anzahl der korrekt beantworteten Wörter sollte doch auch gleich sein wie in der json-Datei?");
+    }
+
+    @Test
+    @DisplayName("U03 - Testen der Getter und Setter des Speicherpfads")
+    void getsetPathTest() {
+        this.speichernUndLaden.setSpeicherpfad("./newPath.json");
+
+        assertTrue(this.speichernUndLaden.getSpeicherpfad().contains("newPath.json"), "Der Speicherpfad sollte doch den neuen Dateinamen enthalten oder nicht?");
+
+        this.speichernUndLaden.speichern(this.wortTrainer);
+        File savedFile = new File(this.speichernUndLaden.getSpeicherpfad());
+
+        assertTrue(savedFile.exists(), "Die Datei sollte nach dem Speichern doch eigentlich mit dem neuen Dateinamen existieren oder?");
+
     }
 }
