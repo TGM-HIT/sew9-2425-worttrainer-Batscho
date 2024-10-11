@@ -24,7 +24,7 @@ public class WortListe {
      * und sowohl als Key (Wort) einen String speichert und als Value (URL) auch
      */
     public WortListe() {
-        this.wortListe = new HashMap<String, String>();
+        this.wortListe = new HashMap<>();
     }
 
     /**
