@@ -77,4 +77,30 @@ public class WortPanel extends JPanel {
         Image img = picture.getImage().getScaledInstance(650, 450, Image.SCALE_SMOOTH);
         this.image.setIcon(new ImageIcon(img));
     }
+
+    /**
+     * Diese Methode getTextfield ist eine getter-Methode für den Input
+     * des Textfeldes und liefert einen String zurück
+     * @return den eingegebenen Input im Textfeld als String
+     */
+    public String getTextfield() {
+        return this.textField.getText();
+    }
+
+    /**
+     * Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
+     * auf dem laufenden zu halten, was hier ermöglicht wird
+     * @param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll
+     * @param correctCounter ist der Zähler für die korrekte Anzahl an Wörtern
+     * @param amountCounter ist der Zähler für die Anzahl an eingegebenen Wörtern
+     * @param picture ist das Image welches hinzugefügt werden soll
+     */
+    public void refresh(boolean isCorrect, int correctCounter, int amountCounter, ImageIcon picture) {
+        this.textField.setText("");
+        if (isCorrect) {
+            setImage(picture);
+        }
+        this.correctCounter.setText(String.valueOf(correctCounter));
+        this.amountCounter.setText(String.valueOf(amountCounter));
+    }
 }
