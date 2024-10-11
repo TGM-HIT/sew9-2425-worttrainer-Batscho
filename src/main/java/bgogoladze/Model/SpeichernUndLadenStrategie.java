@@ -16,11 +16,11 @@ public interface SpeichernUndLadenStrategie {
      * Die abstrakte Speichern Methode
      * @param wortTrainer ist die zu speichernde Session für den WortTrainer
      */
-    public void speichern(WortTrainer wortTrainer);
+    void speichern(WortTrainer wortTrainer);
 
     /**
      * Die abstrakzte Laden Methode
      * @return die gespeicherte WortTrainer Session
      */
-    public WortTrainer laden();
+    WortTrainer laden();
 }

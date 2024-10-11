@@ -17,17 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 public class TestWorttrainerPersistence {
-    private WortListe wortListe;
     private WortTrainer wortTrainer;
     private SpeichernUndLaden speichernUndLaden;
 
     @BeforeEach
     public void setup() {
-        this.wortListe = new WortListe();
-        this.wortListe.addWortEintrag("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
-        this.wortListe.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
-        this.wortListe.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
-        this.wortTrainer = new WortTrainer(this.wortListe);
+        WortListe wortListe = new WortListe();
+        wortListe.addWortEintrag("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
+        wortListe.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
+        wortListe.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
+        this.wortTrainer = new WortTrainer(wortListe);
         this.speichernUndLaden = new SpeichernUndLaden("src/main/resources/worttrainer_session.json");
     }
 

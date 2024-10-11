@@ -22,7 +22,7 @@ public class WortTrainer {
     private String[] aktuell;           //Der aktuelle Worteintrag
     private int abgefragt;              //Die Anzahl an Wörtern die abgefragt wurden
     private int korrekt;                //Die Anzahl der abgefragten Wörter die erraten wurden
-    private StringBuilder statistic;    //Ein abgeleitetes Attribut welches die Statistik angibt
+    //private StringBuilder statistic;    //Ein abgeleitetes Attribut welches die Statistik angibt
 
     /**
      * Dies ist der Konstruktor bei dem die übergebenen Parameter in die Attrribute gespeichert werden

@@ -3,8 +3,11 @@
 
 TestWorttrainerModel ..> WortListe : <use>
 TestWorttrainerModel ..> WortTrainer : <use>
-WortTrainer "1" --> "1" WortListe : - wortListe
-SpeichernUndLadenStrategie ..|> SpeichernUndLaden
+TestWorttrainerPersistence ..> SpeichernUndLaden : <use>
+WortTrainer "1" o-> "1" WortListe : - wortListe
+SpeichernUndLaden "*" --> "1" WortTrainer
+SpeichernUndLaden ..|> SpeichernUndLadenStrategie : <implements>
+
 package Model {
 class WortListe {
 - wortListe: Map<String, String>
