@@ -21,6 +21,8 @@ zu zeigen und Feature für Feature durchzugehen und umzusetzen mit:
 + bgogoladze.Model
   + WortListe
   + WortTrainer
+  + SpeichernUndLadenStrategie (Interface)
+  + SpeichernUndLaden
 + test
   + TestWorttrainerModel
 
