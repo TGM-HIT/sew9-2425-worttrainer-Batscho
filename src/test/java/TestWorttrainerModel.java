@@ -1,4 +1,5 @@
 import bgogoladze.Model.WortListe;
+import bgogoladze.Model.WortTrainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ public class TestWorttrainerModel {
     private WortListe wortListe;
     private WortListe wortListe2 = new WortListe("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
     private WortListe wortListe3 = new WortListe();
+    private WortTrainer wortTrainer;
 
     @BeforeEach
     public void setup() {
@@ -24,6 +26,7 @@ public class TestWorttrainerModel {
         this.wortListe3.addWortEintrag("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
         this.wortListe3.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
         this.wortListe3.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
+        this.wortTrainer = new WortTrainer(this.wortListe3);
     }
 
     @Test
@@ -109,4 +112,21 @@ public class TestWorttrainerModel {
         assertThrows(IllegalArgumentException.class, () -> WortListe.checkUrl(""), "Das Wort ist invalide (empty) aber entspricht trotzdem der Gültigkeit?");
         assertDoesNotThrow(() -> WortListe.checkUrl("https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg"), "Die URL ist gültig aber es wird trotzdem eine Exception geworfen?");
     }
+
+    //Ab hier beginnen die Tests vom WortTrainer
+
+    @Test
+    @DisplayName("U12 - Testen, der Randomizer für den WortTrainer funktioniert")
+    public void randomWortEintragTest() {
+        String[] eintrag = this.wortTrainer.randomWortEintrag();
+        assertNotNull(eintrag, "Der Eintrag wurde random rausgepickt und es wurde für Null-Sicherheit gesorgt aber es ist trotzdem null?");
+        assertTrue(this.wortTrainer.getWortListe().getWortListe().containsKey(eintrag[0]), "Der random Key aus dem WortTrainer ist nicht in der WortListe enhalten?");
+        assertEquals(this.wortListe3.getWortEintrag(eintrag[0])[1], eintrag[1], "Die URL stimmt nicht mit dem zughörigen Key überein?");
+    }
+
+    @Test
+    public void testAusgewaehlt_NullAktuell() {
+
+    }
+
 }

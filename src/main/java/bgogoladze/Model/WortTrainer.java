@@ -25,11 +25,8 @@ public class WortTrainer {
      * @param wortListe ist die Wortliste die gesetzt wird um die Wort-Bild Paare zu verwalten
      */
     public WortTrainer(WortListe wortListe) {
-        if(wortListe != null) {
-            this.wortListe = wortListe;
-        } else {
-            throw new NullPointerException("Die übergebene WortListe darf nicht null sein!");
-        }
+        if(wortListe != null) this.wortListe = wortListe;
+        else throw new NullPointerException("Die übergebene WortListe darf nicht null sein!");
     }
 
     /**
@@ -148,6 +145,14 @@ public class WortTrainer {
      */
     public String[] getAktuell() {
         return this.aktuell;
+    }
+
+    /**
+     * Getter-Methode des Attributs wortListe, welche die WortListe zurückgibt welche durch den WortTrainer verwendet wird
+     * @return den derzeitgen Wert des Attributs wortListe
+     */
+    public WortListe getWortListe() {
+        return this.wortListe;
     }
 
     /**
