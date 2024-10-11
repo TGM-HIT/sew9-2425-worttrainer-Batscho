@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestWorttrainerModel {
     private WortListe wortListe;
     private WortListe wortListe2 = new WortListe("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
-    private WortListe wortListe3;
+    private WortListe wortListe3 = new WortListe();
 
     @BeforeEach
     public void setup() {
