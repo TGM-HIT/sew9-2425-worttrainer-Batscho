@@ -111,7 +111,7 @@ public class WortListe {
      * @param wort ist der Parameter der gecheckt werden soll
      * @return ob der Check erfolgreich war
      */
-    public boolean checkWort(String wort) {
+    public static boolean checkWort(String wort) {
         if (wort == null || wort.isEmpty()) throw new IllegalArgumentException("Das Wort darf weder null, noch leer sein!");
         return true;
     }
@@ -121,7 +121,7 @@ public class WortListe {
      * @param url ist der Parameter (die URL) welche gecheckt werden soll
      * @return den Boolean Wert ob der Check erfolgreich war
      */
-    public boolean checkUrl(String url) {
+    public static boolean checkUrl(String url) {
         if (url == null || url.isEmpty()) throw new IllegalArgumentException("Die URL darf weder null, noch leer sein!");
         return URL_PATTERN.matcher(url).matches();
     }

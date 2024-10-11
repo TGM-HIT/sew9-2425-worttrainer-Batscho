@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+TestWorttrainerModel ..> WortListe : <use>
 
 class WortListe {
 - wortListe: Map<String, String>
@@ -14,8 +15,24 @@ class WortListe {
 + setWortListe(wortListe : Map<String, String>) : void
 + showWortListe(): String
 + length(): int
-+ checkWort(wort: String): boolean
-+ checkUrl(url: String): boolean
++ {static} checkWort(wort: String): boolean
++ {static} checkUrl(url: String): boolean
+}
+
+class TestWorttrainerModel {
+- wortListe: WortListe
+- wortListe2: WortListe
+- wortListe3: WortListe
++ setup() : void
++ notNullEmptyInvalid() : void
++ showTest() : void
++ addingMatchingTest() : void
++ getterTest(): void
++ setterTest() : void
++ lengthTest() : void
++ deleteTest() : void
++ getEintragTest() : void
++ alreadyInListTest() : void
 }
 
 @enduml
