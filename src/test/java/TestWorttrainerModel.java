@@ -166,6 +166,12 @@ public class TestWorttrainerModel {
         assertEquals("{\n  \"Zweck\": \"Worttrainer Statistik\",\n  \"Abgefragt\": 48,\n  \"Korrekt\": 47,\n  \"Score\": \"97,92\",\n  \"Kommentar\": \"Super mach weiter so!\"\n}", this.wortTrainer.getStatistic(), "Die Statistik stimmt nicht überein?");
     }
 
-
-
+    @Test
+    @DisplayName("U16 - Testen, ob das reseten der Statistik auch funktioniert")
+    public void resetTest() {
+        this.wortTrainer.reset();
+        assertNotNull(this.wortTrainer, "Vielleicht wurde die Statistik resetet aber nicht der Rechtschreibtrainer oder?");
+        assertEquals(0, this.wortTrainer.getAbgefragt(), "Es wurde die Statistik resetet, aber die Anzahl an Fragen ist nicht 0?");
+        assertEquals(0, this.wortTrainer.getKorrekt(), "Es wurde die Statistik resetet, aber die Anzahl an korrekten Antworten ist nicht 0?");
+    }
 }
