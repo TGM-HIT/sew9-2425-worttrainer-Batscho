@@ -43,7 +43,7 @@ class WortTrainer {
 - aktuell : String[]
 - abgefragt : int
 - korrekt : int
-- / statistik : StringBuilder
+- / statistic : StringBuilder
 + WortTrainer()
 + ausgewaehlt() : String[]
 + randomWortEintrag() : String[]
