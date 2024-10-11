@@ -20,6 +20,12 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
     private String speicherpfad;
 
     /**
+     * nicht relevant
+     * @param speicherpfad nicht verwendet
+     */
+    public SpeichernUndLaden(String speicherpfad) {}
+
+    /**
      * Diese Methode speichern ist zum serialisierten Speichern eines WortTrainer-Objekts da und speichert diese
      * "Session" in eine Json Datei welche dann später geladen und gelesen werden kann.
      * @param wortTrainer ist die zu speichernde Session für den WortTrainer

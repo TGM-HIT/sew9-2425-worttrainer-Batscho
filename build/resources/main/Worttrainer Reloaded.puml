@@ -4,7 +4,7 @@
 TestWorttrainerModel ..> WortListe : <use>
 TestWorttrainerModel ..> WortTrainer : <use>
 WortTrainer "1" --> "1" WortListe : - wortListe
-
+SpeichernUndLadenStrategie ..|> SpeichernUndLaden
 package Model {
 class WortListe {
 - wortListe: Map<String, String>
@@ -48,6 +48,13 @@ interface SpeichernUndLadenStrategie {
 + speichern(wortTrainer : WortTrainer) : void
 + laden() : WortTrainer
 }
+
+class SpeichernUndLaden {
+- speicherpfad : String[1]
++ speichern(wortTrainer : WortTrainer) : void
++ laden() : WortTrainer
++ getSpeicherPfad() : String
++ setSpeicherPfad(speicherpfad : String) : void
 }
 
 

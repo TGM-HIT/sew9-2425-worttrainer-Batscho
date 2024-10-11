@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"bgogoladze.Model","l":"SpeichernUndLadenStrategie"},{"p":"bgogoladze.Model","l":"WortListe"},{"p":"bgogoladze.Model","l":"WortTrainer"}];updateSearchResults();
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"bgogoladze.Model","l":"SpeichernUndLaden"},{"p":"bgogoladze.Model","l":"SpeichernUndLadenStrategie"},{"p":"bgogoladze.Model","l":"WortListe"},{"p":"bgogoladze.Model","l":"WortTrainer"}];updateSearchResults();

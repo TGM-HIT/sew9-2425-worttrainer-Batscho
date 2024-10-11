@@ -51,6 +51,7 @@ interface SpeichernUndLadenStrategie {
 
 class SpeichernUndLaden {
 - speicherpfad : String[1]
++ SpeichernUndLaden()
 + speichern(wortTrainer : WortTrainer) : void
 + laden() : WortTrainer
 + getSpeicherPfad() : String
