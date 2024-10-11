@@ -1,7 +1,7 @@
 package bgogoladze.View;
 
 import bgogoladze.Controller.WortController;
-
+import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 
@@ -102,5 +102,16 @@ public class WortPanel extends JPanel {
         }
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
+    }
+
+    /**
+     * Diese Methode reset dient dazu um die Attribute wie das Textfeld oder die Zähler
+     * zu reseten um wieder neu anzufangen, was ganz einfach bedeutet, dass die Zähler zurück
+     * auf 0 gehen und das Textfeld leer ist.
+     */
+    public void reset() {
+        this.textField.setText("");
+        this.correctCounter.setText("0");
+        this.amountCounter.setText("0");
     }
 }

@@ -1,5 +1,6 @@
 package bgogoladze.View;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Diese Klasse namens WortFrame ist die ein Teil der View-Klassen in diesem Konzept und muss
@@ -36,12 +37,12 @@ public class WortFrame extends JFrame {
      * Ausführen der Klasse WortFrame
      * @param args wird nicht verwendet
      */
-    public static void main(String [] args) {
+    /*public static void main(String [] args) {
         try {
             WortPanel p = new WortPanel();
         } catch (IOException e) {
             e.printStackTrace();
         }
         new WortFrame();
-    }
+    }*/
 }
