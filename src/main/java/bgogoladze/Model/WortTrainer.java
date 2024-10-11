@@ -33,17 +33,44 @@ public class WortTrainer {
     }
 
     /**
-     * Diese Methode randomWortEintrag liefert einen zufälligen Worteintrag welcher drüber aufgerufen werden kann
+     * Diese Methode randomWortEintrag liefert einen zufälligen Worteintrag welcher drüber aufgerufen werden kann.
+     * Die Methode keySet der Map gibt ein Set der Keys zurück, in deinem Fall aus Strings.
+     * Außerdem wird die toArray()-Methode des Set verwendet, um die Elemente in ein Array zu kopieren.
+     * Die new String[0]-Notation ist eine gebräuchliche Methode, um das Zielarray zu bestimmen, wobei der Vorteil
+     * von new String[0] ist, dass das Array dynamisch erstellt wird, basierend auf der tatsächlichen Größe des Sets.
      * @return den zufällig ausgewählten WortEintrag
      */
     public String[] randomWortEintrag() {
-        Random zufall = new Random();
         String[] all = this.wortListe.getWortListe().keySet().toArray(new String[0]);
-        this.aktuell = wortListe.getWortEintrag(all[zufall.nextInt(all.length)]);
+        this.aktuell = wortListe.getWortEintrag(all[new Random().nextInt(all.length)]);
         return this.aktuell;
-        /*do {
-            this.aktuell = this.wortListe.getWortEintrag((int) (Math.random() * this.wortListe.getWortEinträge().length));
-        } while(this.aktuell == null);
-        return this.aktuell;*/
     }
+
+    /**
+     * Diese Methode ausgewählt liefert den aktuellen Wert vom Attribut aktuell
+     * @return den aktuell ausgewählten Worteintrag in der Form eines String Arrays mit Key und Value
+     */
+    public String[] ausgewaehlt() {
+        if(this.aktuell != null) {
+            return this.aktuell;
+        } else {
+            return this.randomWortEintrag();
+        }
+    }
+
+    /**
+     * Diese Methode check checkt ob ein übergebenes Wort mit dem Wort vom aktuellen Eintrag übereinstimmt
+     * @param wort ist das Wort, welchs verglichen wird mit der korrekten Antwort
+     * @return ob die Wörter übereinstimmen und somit die Statistik sich verändert
+     */
+    public boolean check(String wort) throws IllegalArgumentException{
+        this.abgefragt++;
+        WortListe.checkWort(wort);
+        if(this.aktuell[0].equals(wort)) {
+            this.korrekt++;
+            return true;
+        }
+        return false;
+    }
+
 }
