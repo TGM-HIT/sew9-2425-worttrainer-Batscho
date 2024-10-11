@@ -73,7 +73,7 @@ public class WortListe {
      * @param url ist der Value in der Map, also die URL
      */
     public void addWortEintrag(String wort, String url) {
-        if(!checkWort(wort) || !checkUrl(url))  throw new IllegalArgumentException("Das Wort oder die URL dürfen nicht null, leer oder invalide sein!");
+        if((!checkWort(wort) || !checkUrl(url)) || this.wortListe.containsKey(wort))  throw new IllegalArgumentException("Das Wort oder die URL dürfen nicht null, leer oder invalide sein und darf noch nicht eingetragen sein!");
         this.wortListe.put(wort, url);
     }
 

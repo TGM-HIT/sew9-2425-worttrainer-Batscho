@@ -24,6 +24,7 @@ public class TestWorttrainerModel {
         this.wortListe = new WortListe();
         this.wortListe3.addWortEintrag("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
         this.wortListe3.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
+        this.wortListe3.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
     }
 
     @Test
@@ -58,14 +59,26 @@ public class TestWorttrainerModel {
     @DisplayName("U05 - Testen, ob der setter der WortListe auch einwandfrei funktioniert")
     public void setterTest() {
         this.wortListe.setWortListe(this.wortListe2.getWortListe());
-        assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die erste WortListe wurde auf die zweite gesetzt, jedoch sin diese im Vergleich nicht dieselben");
+        assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die erste WortListe wurde auf die zweite gesetzt, jedoch sind diese im Vergleich nicht dieselben");
     }
 
     @Test
-    @DisplayName("U06 - Testen, ob der setter der WortListe auch einwandfrei funktioniert")
-    public void t() {
-        this.wortListe.setWortListe(this.wortListe2.getWortListe());
-        assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die erste WortListe wurde auf die zweite gesetzt, jedoch sin diese im Vergleich nicht dieselben");
+    @DisplayName("U06 - Testen, ob die korrekte Länge zurückgegeben werden kann bei Bedarf")
+    public void lengthTest() {
+        this.wortListe3.addWortEintrag("Hai", "https://naturdetektive.bfn.de/fileadmin/_processed_/f/f/csm_Weisser_Hai_Elias_Levy_cc-by-20_flach_b563f2725e.jpg");
+        this.wortListe3.delWortEintrag("Hamster");
+        assertEquals(3, this.wortListe3.length(), "Die dritte WortListe hatte 3 Einträge, wobei einer gelöscht wurde und ein weiterer geaddet wurde und hat nicht dieselbe Länge 3?");
+    }
+
+    @Test
+    @DisplayName("U07 - Testen, ob die korrekte Länge zurückgegeben werden kann bei Bedarf")
+    public void deleteTest() {
+        this.wortListe3.addWortEintrag("Hai", "https://naturdetektive.bfn.de/fileadmin/_processed_/f/f/csm_Weisser_Hai_Elias_Levy_cc-by-20_flach_b563f2725e.jpg");
+        this.wortListe3.delWortEintrag("Hamster");
+        this.wortListe3.delWortEintrag("Hai");
+        this.wortListe3.delWortEintrag("Fische");
+        this.wortListe3.delWortEintrag("Papagei");
+        assertEquals(0, this.wortListe3.length(), "Die WortListe hatte viele Einträge jedoch wurden alle gelöscht und sie ist trotzdem nicht leer?");
     }
 
 }
