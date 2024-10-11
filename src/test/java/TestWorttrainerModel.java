@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * Diese Testklasse namens TestWorttrainerModel ist zum Testen des Models (bis jetzt die WortListe) und beinhaltet
- * mindestens eine Testmethode pro Methode aus der Klasse welche getestet werden soll und auch vielleicht zusätzliche
- * Kombinationen mehrerer Szenarien
+ * Diese Testklasse namens TestWorttrainerModel ist zum Testen des Models (WortListe und WortTrainer) und beinhaltet
+ * mindestens eine Testmethode pro Methode aus den Klassen welche getestet werden sollen und auch vielleicht zusätzliche
+ * Kombinationen mehrerer Szenarien.
  * @author Gogoladze Batschana
  * @version 01-10-2024
  */

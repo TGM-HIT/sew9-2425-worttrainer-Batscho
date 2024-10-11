@@ -20,6 +20,9 @@ zu zeigen und Feature für Feature durchzugehen und umzusetzen mit:
 ## Klassen-Hierarchie
 + bgogoladze.Model
   + WortListe
+  + WortTrainer
++ test
+  + TestWorttrainerModel
 
 ## Verwendete Technologien
 1. ##### GitHub
@@ -33,3 +36,6 @@ zu zeigen und Feature für Feature durchzugehen und umzusetzen mit:
 
 4. ##### Java
 + Java ist die Hauptprogrammiersprache dieses Projekts. Es ist eine weit verbreitete, objektorientierte Programmiersprache, die plattformunabhängig ausgeführt werden kann. In diesem Projekt wird Java verwendet, um die Kernlogik des Worttrainers, die Persistenz und die GUI zu implementieren.
+
+5. ##### Markdown
++ Markdown ist eine leichtgewichtige Auszeichnungssprache, die entwickelt wurde, um Text einfach und lesbar zu formatieren. Sie ermöglicht es, Text in einem einfachen, unformatierten Format zu schreiben, das später in HTML oder andere Formate konvertiert werden kann. Markdown wird oft für Dokumentationen, Blogs, Readme-Dateien und Foren verwendet.
