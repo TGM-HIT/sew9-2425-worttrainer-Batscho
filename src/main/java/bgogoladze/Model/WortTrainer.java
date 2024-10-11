@@ -148,6 +148,16 @@ public class WortTrainer {
     }
 
     /**
+     * Setter-Methode des Attributs aktuell, welche den
+     * neuen Wert für aktuell setzt - NUR FÜR TESTZWECKE
+     * @param eintrag ist der zu setzende Parameter
+     */
+    public void setAktuell(String[] eintrag) {
+        if(eintrag == null) throw new NullPointerException("Der zu setzende Eintrag darf nicht null sein!");
+        else this.aktuell = eintrag;
+    }
+
+    /**
      * Getter-Methode des Attributs wortListe, welche die WortListe zurückgibt welche durch den WortTrainer verwendet wird
      * @return den derzeitgen Wert des Attributs wortListe
      */
