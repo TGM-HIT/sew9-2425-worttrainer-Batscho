@@ -130,7 +130,6 @@ public class TestWorttrainerModel {
         String[] eintrag = this.wortTrainer.ausgewaehlt();
         assertNotNull(eintrag, "Der ausgewählte Worteintrag ist null, wieeee?");
         assertTrue(this.wortListe3.getWortListe().containsKey(eintrag[0]), "Der randomisierte Key ist nicht in der WortListe entahlten?");
-
     }
 
 }
