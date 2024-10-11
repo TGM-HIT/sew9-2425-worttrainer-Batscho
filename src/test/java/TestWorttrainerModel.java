@@ -125,7 +125,11 @@ public class TestWorttrainerModel {
     }
 
     @Test
-    public void testAusgewaehlt_NullAktuell() {
+    @DisplayName("U13 - Testen, ob der Randomizer augerufen wird wenn das aktuelle Wort null ist")
+    public void ausgewaehltNullTest() {
+        String[] eintrag = this.wortTrainer.ausgewaehlt();
+        assertNotNull(eintrag, "Der ausgewählte Worteintrag ist null, wieeee?");
+        assertTrue(this.wortListe3.getWortListe().containsKey(eintrag[0]), "Der randomisierte Key ist nicht in der WortListe entahlten?");
 
     }
 
