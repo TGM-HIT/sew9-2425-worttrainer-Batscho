@@ -44,7 +44,7 @@ class WortTrainer {
 - abgefragt : int
 - korrekt : int
 - / statistic : StringBuilder
-+ WortTrainer()
++ WortTrainer(wortListe : WortListe)
 + ausgewaehlt() : String[]
 + randomWortEintrag() : String[]
 + check(wort : String) : boolean
