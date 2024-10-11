@@ -79,5 +79,12 @@ class TestWorttrainerModel {
 + wortCheckerTest() : void
 + urlCheckerTest() : void
 }
+}
 
+package View {
+class WortFrame {
++ WortFrame(layoutPanel : WortPanel)
+- menubar() : JMenuBar
++ {static} main(args : Strins[]) : void
+}
 @enduml
