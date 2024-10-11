@@ -1,5 +1,10 @@
 package bgogoladze.Model;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.IOException;
+import java.io.FileWriter;
+
 /**
  * Diese Klasse namens SpeichernUndLaden beinhaltet ein Attribut für den Speicherpfad als String und die zugehörigen
  * Zugriffsmodifikatoren, also getSpeicherPfad und setSpeicherpfad, sowie die wichtigsten Methoden, nämlich das
@@ -12,18 +17,25 @@ package bgogoladze.Model;
 public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
     private String speicherpfad;
 
-
     /**
-     * Die abstrakte Speichern Methode
+     * Diese Methode speichern ist zum serialisierten Speichern eines WortTrainer-Objekts da und speichert diese
+     * "Session" in eine Json Datei welche dann später geladen und gelesen werden kann.
      * @param wortTrainer ist die zu speichernde Session für den WortTrainer
      */
     @Override
     public void speichern(WortTrainer wortTrainer) {
-
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();                 // Gson-Instanz mit Pretty-Printing
+        try (FileWriter fileWriter = new FileWriter(this.speicherpfad)) {           // Öffnet FileWriter für den angegebenen Pfad
+            gson.toJson(wortTrainer, fileWriter);                                   // Serialisiert das WortTrainer-Objekt und schreibt es in die .json-Datei
+            System.out.println("WortTrainer Session erfolgreich gespeichert unter: " + this.speicherpfad);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Fehler beim Speichern der Datei: " + e.getMessage());
+        }
     }
 
     /**
-     * Die abstrakzte Laden Methode
+     * Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht
      * @return die gespeicherte WortTrainer Session
      */
     @Override
@@ -46,7 +58,7 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
      * @param speicherpfad ist der zu setzende neue Pfad
      */
     public void setSpeicherpfad(String speicherpfad) {
-        if(speicherpfad.isEmpty() || speicherpfad == null) throw new IllegalArgumentException("Der zu setzende Speicherpfad darf nicht null sein!");
-        else this.speicherpfad = speicherpfad;
+        if(speicherpfad == null || speicherpfad.isEmpty()) throw new IllegalArgumentException("Der Speicherpfad darf nicht null oder leer sein!");
+        this.speicherpfad = speicherpfad;
     }
 }

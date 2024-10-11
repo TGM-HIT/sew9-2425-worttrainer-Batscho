@@ -55,8 +55,6 @@ class SpeichernUndLaden {
 + laden() : WortTrainer
 + getSpeicherPfad() : String
 + setSpeicherPfad(speicherpfad : String) : void
-+ defaultSpeichern() : void
-+ defaultLaden() : WortTrainer
 }
 
 
