@@ -1,8 +1,0 @@
--classpath 'C:\\Users\\Startklar\\Documents\\SEW\\BlueJ\\Projekt\\5.Jahrgang\\SEW_9a.1\\build\\classes\\java\\main;C:\\Users\\Startklar\\Documents\\SEW\\BlueJ\\Projekt\\5.Jahrgang\\SEW_9a.1\\build\\resources\\main;C:\\Users\\Startklar\\.gradle\\caches\\modules-2\\files-2.1\\com.google.code.gson\\gson\\2.10\\dd9b193aef96e973d5a11ab13cd17430c2e4306b\\gson-2.10.jar'
--d 'C:\\Users\\Startklar\\Documents\\SEW\\BlueJ\\Projekt\\5.Jahrgang\\SEW_9a.1\\build\\docs\\javadoc'
--doctitle 'Worttrainer Reloaded 1.0-SNAPSHOT API'
--notimestamp 
--quiet 
--windowtitle 'Worttrainer Reloaded 1.0-SNAPSHOT API'
-'C:\\Users\\Startklar\\Documents\\SEW\\BlueJ\\Projekt\\5.Jahrgang\\SEW_9a.1\\src\\main\\java\\bgogoladze\\Model\\WortListe.java'
-'C:\\Users\\Startklar\\Documents\\SEW\\BlueJ\\Projekt\\5.Jahrgang\\SEW_9a.1\\src\\main\\java\\bgogoladze\\Model\\WortTrainer.java'

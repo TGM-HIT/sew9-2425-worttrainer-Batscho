@@ -144,8 +144,8 @@ public class TestWorttrainerModel {
     @DisplayName("U14 - Testen, ob das Checken (auch ohne case-sensetivity) der korrekten und inkorrekten Wörter auch funktioniert für die Statistik")
     public void testCheckIgnoreCase() {
         String[] eintrag = this.wortTrainer.ausgewaehlt();
-
         boolean result = this.wortTrainer.check(eintrag[0]);
+
         assertTrue(result, "Das Wort sollte korrekt sein.");
         assertEquals(1, this.wortTrainer.getKorrekt(), "Die Anzahl der korrekten Antworten sollte doch 1 sein?");
         assertEquals(1, this.wortTrainer.getAbgefragt(), "Die Anzahl der abgefragten Wörter sollte doch 1 sein?");
@@ -157,5 +157,15 @@ public class TestWorttrainerModel {
         assertEquals(2, this.wortTrainer.getKorrekt(), "Die Anzahl der korrekten Antworten sollte doch bereits 2 sein?");
         assertEquals(2, this.wortTrainer.getAbgefragt(), "Die Anzahl der abgefragten Wörter sollte doch bereits2 sein.");
     }
+
+    @Test
+    @DisplayName("U15 - Testen, ob die Statistik auch eine korrekte Ausgabe liefert")
+    public void statisticTest() {
+        this.wortTrainer.setAbgefragt(48);
+        this.wortTrainer.setKorrekt(47);
+        assertEquals("{\n  \"Zweck\": \"Worttrainer Statistik\",\n  \"Abgefragt\": 48,\n  \"Korrekt\": 47,\n  \"Score\": \"97,92\",\n  \"Kommentar\": \"Super mach weiter so!\"\n}", this.wortTrainer.getStatistic(), "Die Statistik stimmt nicht überein?");
+    }
+
+
 
 }

@@ -1,5 +1,9 @@
 package bgogoladze.Model;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -90,14 +94,24 @@ public class WortTrainer {
      * @return die Rückgabe des zusammengesetzten Strings aus dem ursprünglichen StringBuilder
      */
     public String getStatistic() {
-        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
+        /*double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
         this.statistic.append("\nStatistik:\n")
                 .append("Abgefragt: ").append(this.abgefragt).append("\n")
                 .append("Korrekte: ").append(this.korrekt).append("\n")
                 .append("Score: ").append(String.format("%.2f", score)).append("%\n");  // Score auf 2 Nachkommastellen formatiert
         if(score >= 89) this.statistic.append("Super mach weiter so!");
         else this.statistic.append("Das geht besser!");
-        return this.statistic.toString();
+        return this.statistic.toString();*/
+        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;
+        String kommentar = score >= 89 ? "Super mach weiter so!" : "Das geht besser!";
+        Map<String, Object> statistikMap = new LinkedHashMap<>();
+        statistikMap.put("Zweck", "Worttrainer Statistik");
+        statistikMap.put("Abgefragt", this.getAbgefragt());
+        statistikMap.put("Korrekt", this.getKorrekt());
+        statistikMap.put("Score", String.format("%.2f", score));
+        statistikMap.put("Kommentar", kommentar);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(statistikMap);
     }
 
     /**

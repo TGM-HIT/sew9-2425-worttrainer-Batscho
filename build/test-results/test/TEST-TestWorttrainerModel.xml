@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestWorttrainerModel" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-10-11T16:24:18" hostname="LAPTOP-0KEN8UFH" time="0.118">
+<testsuite name="TestWorttrainerModel" tests="15" skipped="0" failures="0" errors="0" timestamp="2024-10-11T16:46:51" hostname="LAPTOP-0KEN8UFH" time="0.12">
   <properties/>
   <testcase name="U04 - Testen, ob der getter der WortListe auch einwandfrei funktioniert" classname="TestWorttrainerModel" time="0.024"/>
-  <testcase name="U08 - Testen, ob die Methode getWortEintrag zum Holen einzelner Einträge auch funktioniert" classname="TestWorttrainerModel" time="0.003"/>
-  <testcase name="U13 - Testen, ob der Randomizer augerufen wird wenn das aktuelle Wort null ist" classname="TestWorttrainerModel" time="0.002"/>
-  <testcase name="U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert" classname="TestWorttrainerModel" time="0.049"/>
-  <testcase name="U05 - Testen, ob der setter der WortListe auch einwandfrei funktioniert" classname="TestWorttrainerModel" time="0.002"/>
-  <testcase name="U12 - Testen, der Randomizer für den WortTrainer funktioniert" classname="TestWorttrainerModel" time="0.001"/>
-  <testcase name="U10 - Testen, ob der Wort-Checker auch funktioniert" classname="TestWorttrainerModel" time="0.004"/>
+  <testcase name="U08 - Testen, ob die Methode getWortEintrag zum Holen einzelner Einträge auch funktioniert" classname="TestWorttrainerModel" time="0.004"/>
+  <testcase name="U15 - Testen, ob die Statistik auch eine korrekte Ausgabe liefert" classname="TestWorttrainerModel" time="0.052"/>
+  <testcase name="U13 - Testen, ob der Randomizer augerufen wird wenn das aktuelle Wort null ist" classname="TestWorttrainerModel" time="0.004"/>
+  <testcase name="U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert" classname="TestWorttrainerModel" time="0.002"/>
+  <testcase name="U05 - Testen, ob der setter der WortListe auch einwandfrei funktioniert" classname="TestWorttrainerModel" time="0.001"/>
+  <testcase name="U12 - Testen, der Randomizer für den WortTrainer funktioniert" classname="TestWorttrainerModel" time="0.003"/>
+  <testcase name="U10 - Testen, ob der Wort-Checker auch funktioniert" classname="TestWorttrainerModel" time="0.003"/>
   <testcase name="U06 - Testen, ob die korrekte Länge zurückgegeben werden kann bei Bedarf" classname="TestWorttrainerModel" time="0.001"/>
   <testcase name="U09 - Testen, ob auch das adden von neuen Einträgen möglich ist, wenn dieser schon vorhanden ist" classname="TestWorttrainerModel" time="0.002"/>
   <testcase name="U01 - Eine WortListe welche aus invaliden Zeichen besteht wirft eine Exception" classname="TestWorttrainerModel" time="0.002"/>
-  <testcase name="U11 - Testen, ob der URL-Checker auch funktioniert" classname="TestWorttrainerModel" time="0.003"/>
+  <testcase name="U11 - Testen, ob der URL-Checker auch funktioniert" classname="TestWorttrainerModel" time="0.002"/>
   <testcase name="U03 - Testen, ob das Adden von neuen Einträgen auch funktioniert wie gewollt" classname="TestWorttrainerModel" time="0.001"/>
-  <testcase name="U07 - Testen, ob die korrekte Länge zurückgegeben werden kann bei Bedarf" classname="TestWorttrainerModel" time="0.001"/>
+  <testcase name="U07 - Testen, ob die korrekte Länge zurückgegeben werden kann bei Bedarf" classname="TestWorttrainerModel" time="0.002"/>
   <testcase name="U14 - Testen, ob das Checken (auch ohne case-sensetivity) der korrekten und inkorrekten Wörter auch funktioniert für die Statistik" classname="TestWorttrainerModel" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
