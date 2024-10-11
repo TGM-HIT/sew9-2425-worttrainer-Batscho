@@ -39,6 +39,7 @@ class WortTrainer {
 + getKorrekt() : int
 + setKorrekt(korrekt : int) : void
 + getAktuell() : String[]
++ getWortListe() : WortListe
 + reset(): void
 }
 }
