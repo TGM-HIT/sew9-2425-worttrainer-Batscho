@@ -2,6 +2,8 @@ package bgogoladze.Model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter;
 
@@ -24,9 +26,9 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
      */
     @Override
     public void speichern(WortTrainer wortTrainer) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();                 // Gson-Instanz mit Pretty-Printing
-        try (FileWriter fileWriter = new FileWriter(this.speicherpfad)) {           // Öffnet FileWriter für den angegebenen Pfad
-            gson.toJson(wortTrainer, fileWriter);                                   // Serialisiert das WortTrainer-Objekt und schreibt es in die .json-Datei
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();                     // Gson-Instanz mit Pretty-Printing
+        try (FileWriter fileWriter = new FileWriter(this.getSpeicherpfad())) {          // Öffnet den FileWriter für den Speicherpfad
+            gson.toJson(wortTrainer, fileWriter);                                       // Serialisiert das WortTrainer-Objekt und schreibt es in die .json-Datei
             System.out.println("WortTrainer Session erfolgreich gespeichert unter: " + this.speicherpfad);
         } catch (IOException e) {
             e.printStackTrace();
@@ -40,7 +42,15 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
      */
     @Override
     public WortTrainer laden() {
-        return null;
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader(speicherpfad)) {                            // Öffnet den FileReader für den Speicherpfad
+            WortTrainer wortTrainer = gson.fromJson(reader, WortTrainer.class);             // Deserialisiert das JSON zurück in ein WortTrainer-Objekt
+            System.out.println("WortTrainer Session erfolgreich geladen");
+            return wortTrainer;
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Fehler beim Laden der Datei: " + e.getMessage());
+        }
     }
 
     /**
@@ -48,8 +58,8 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
      * aktuellen Wert von speicherpfad liefert
      * @return den aktuellen Wert des Attributs speicherpfad
      */
-    public String getKorrekt(){
-        return this.speicherpfad;
+    public String getSpeicherpfad(){
+        return this.speicherpfad += "/worttrainer_session.json";
     }
 
     /**
