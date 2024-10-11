@@ -33,6 +33,8 @@ class TestWorttrainerModel {
 + deleteTest() : void
 + getEintragTest() : void
 + alreadyInListTest() : void
++ wortCheckerTest() : void
++ urlCheckerTest() : void
 }
 
 @enduml

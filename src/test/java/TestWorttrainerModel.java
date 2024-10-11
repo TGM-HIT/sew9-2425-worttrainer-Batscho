@@ -36,14 +36,14 @@ public class TestWorttrainerModel {
 
     @Test
     @DisplayName("U02 - Testen, ob die Pretty Print Ausgabe mittels Gson der Map funktioniert")
-    public void show() {
+    public void showTest() {
         this.wortListe.addWortEintrag("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
         assertEquals("{\n  \"Papagei\": \"https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg\"\n}", this.wortListe.showWortListe(), "Die WortListe zeigt nicht denselben Output im Json-Format");
     }
 
     @Test
     @DisplayName("U03 - Testen, ob das Adden von neuen Einträgen auch funktioniert wie gewollt")
-    public void addingMatching() {
+    public void addingMatchingTest() {
         this.wortListe.addWortEintrag("Hamster", "https://blog.wwf.de/wp-content/uploads/2021/12/Feldhamster-Futter-Wangen-0079476299h-1920x1080-c-IMAGO-blickwinkel.jpg");
         assertEquals(this.wortListe2.showWortListe(), this.wortListe.showWortListe(), "Die zweite Wortliste ist nicht dieselbe, obwohl zur leeren WortListe genau das eine Element abgegeben wurde");
     }
@@ -94,4 +94,19 @@ public class TestWorttrainerModel {
         assertThrows(IllegalArgumentException.class, () -> this.wortListe3.addWortEintrag("Hai", "https://naturdetektive.bfn.de/fileadmin/_processed_/f/f/csm_Weisser_Hai_Elias_Levy_cc-by-20_flach_b563f2725e.jpg"), "Es wird keine Exception geworfen, obwohl der Eintrag Hai schon vorhanden ist?");
     }
 
+    @Test
+    @DisplayName("U10 - Testen, ob der Wort-Checker auch funktioniert")
+    public void wortCheckerTest() {
+        assertThrows(IllegalArgumentException.class, () -> WortListe.checkWort(""), "Das Wort ist invalide aber entspricht trotzdem der Gültigkeit?");
+        assertThrows(IllegalArgumentException.class, () -> WortListe.checkWort(null), "Das Wort ist invalide aber entspricht trotzdem der Gültigkeit?");
+        assertDoesNotThrow(() -> WortListe.checkWort("Papagei"), "Das Wort ist gültig aber es wird trotzdem eine Exception geworfen?");
+    }
+
+    @Test
+    @DisplayName("U11 - Testen, ob der URL-Checker auch funktioniert")
+    public void urlCheckerTest() {
+        assertThrows(IllegalArgumentException.class, () -> WortListe.checkUrl(null), "Die URL ist invalide (null) aber entspricht trotzdem der Gültigkeit?");
+        assertThrows(IllegalArgumentException.class, () -> WortListe.checkUrl(""), "Das Wort ist invalide (empty) aber entspricht trotzdem der Gültigkeit?");
+        assertDoesNotThrow(() -> WortListe.checkUrl("https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg"), "Die URL ist gültig aber es wird trotzdem eine Exception geworfen?");
+    }
 }
