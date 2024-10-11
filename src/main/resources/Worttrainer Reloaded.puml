@@ -24,7 +24,7 @@ class WortListe {
 
 class WortTrainer {
 - wortListe : WortListe[1]
-- aktuell : String[]
+- aktuell : String[2]
 - abgefragt : int
 - korrekt : int
 - / statistic : StringBuilder
@@ -38,6 +38,7 @@ class WortTrainer {
 + setAbgefragt(abgefragt : int) : void
 + getKorrekt() : int
 + setKorrekt(korrekt : int) : void
++ getAktuell() : String[]
 + reset(): void
 }
 }

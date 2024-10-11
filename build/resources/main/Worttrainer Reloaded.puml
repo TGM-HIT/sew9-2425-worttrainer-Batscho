@@ -2,7 +2,10 @@
 'https://plantuml.com/class-diagram
 
 TestWorttrainerModel ..> WortListe : <use>
+TestWorttrainerModel ..> WortTrainer : <use>
+WortTrainer "1" --> "1" WortListe : - wortListe
 
+package Model {
 class WortListe {
 - wortListe: Map<String, String>
 - {static} URL_PATTERN: Pattern
@@ -18,6 +21,28 @@ class WortListe {
 + {static} checkWort(wort: String): boolean
 + {static} checkUrl(url: String): boolean
 }
+
+class WortTrainer {
+- wortListe : WortListe[1]
+- aktuell : String[2]
+- abgefragt : int
+- korrekt : int
+- / statistic : StringBuilder
++ WortTrainer(wortListe : WortListe)
++ ausgewaehlt() : String[]
++ randomWortEintrag() : String[]
++ check(wort : String) : boolean
++ checkIgnoreCase(wort : String) : boolean
++ getStatistic() : String
++ getAbgefragt() : int
++ setAbgefragt(abgefragt : int) : void
++ getKorrekt() : int
++ setKorrekt(korrekt : int) : void
++ getAktuell() : String[]
++ reset(): void
+}
+}
+
 
 class TestWorttrainerModel {
 - wortListe: WortListe

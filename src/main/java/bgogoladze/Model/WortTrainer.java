@@ -115,7 +115,7 @@ public class WortTrainer {
     /**
      * Setter-Methode des Attributs abgefragt, welche den
      * neuen Wert für abgefragt setzt
-     * @return den neuen Wert des Attributs abgefragt
+     * @param abgefragt ist die zu setzende Anzahl an gestellten Fragen
      */
     public void setAbgefragt(int abgefragt) {
         if(abgefragt < 0) throw new IllegalArgumentException("Die Anzahl an gestellten Fragen kann nicht kleiner als 0 sein!");
@@ -134,10 +134,28 @@ public class WortTrainer {
     /**
      * Setter-Methode des Attributs korrekt, welche den
      * neuen Wert für korrekt setzt
-     * @return den neuen Wert des Attributs korrekt
+     * @param korrekt ist die zu setzende Anzahl an korrekten Antworten
      */
     public void setKorrekt(int korrekt) {
         if(korrekt < 0) throw new IllegalArgumentException("Die Anzahl an korrekten Antworten kann nicht kleiner als 0 sein!");
         else this.korrekt = korrekt;
+    }
+
+    /**
+     * Getter-Methode des Attributs aktuell, welche den
+     * derzeitigen Wert von aktuell liefert
+     * @return den derzeitgen Wert des Attributs aktuell, also den aktuellen Worteintrag
+     */
+    public String[] getAktuell() {
+        return this.aktuell;
+    }
+
+    /**
+     * Diese Methode reset setzt wieder alles was die Statistik betrifft auf 0 und mischt nochmal alles
+     */
+    public void reset() {
+        this.setKorrekt(0);
+        this.setAbgefragt(0);
+        this.randomWortEintrag();
     }
 }

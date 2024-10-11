@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"bgogoladze.Model","l":"WortListe"}];updateSearchResults();
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"bgogoladze.Model","l":"WortListe"},{"p":"bgogoladze.Model","l":"WortTrainer"}];updateSearchResults();
