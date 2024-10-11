@@ -3,8 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -79,6 +78,20 @@ public class TestWorttrainerModel {
         this.wortListe3.delWortEintrag("Fische");
         this.wortListe3.delWortEintrag("Papagei");
         assertEquals(0, this.wortListe3.length(), "Die WortListe hatte viele Einträge jedoch wurden alle gelöscht und sie ist trotzdem nicht leer?");
+    }
+
+    @Test
+    @DisplayName("U08 - Testen, ob die Methode getWortEintrag zum Holen einzelner Einträge auch funktioniert")
+    public void getEintragTest() {
+        this.wortListe3.delWortEintrag("Papagei");
+        assertThrows(IllegalArgumentException.class, () -> this.wortListe3.getWortEintrag("Papagei"), "Es wird keine Exception geworfen, obwohl der Eintrag Papagei nicht gerade verfügbar ist?");
+    }
+
+    @Test
+    @DisplayName("U09 - Testen, ob auch das adden von neuen Einträgen möglich ist, wenn dieser schon vorhanden ist")
+    public void alreadyInListTest() {
+        assertDoesNotThrow(() -> this.wortListe3.addWortEintrag("Hai", "https://naturdetektive.bfn.de/fileadmin/_processed_/f/f/csm_Weisser_Hai_Elias_Levy_cc-by-20_flach_b563f2725e.jpg"),"Man addet einen neuen WortEintrag, aber der Prozess geht schief?");
+        assertThrows(IllegalArgumentException.class, () -> this.wortListe3.addWortEintrag("Hai", "https://naturdetektive.bfn.de/fileadmin/_processed_/f/f/csm_Weisser_Hai_Elias_Levy_cc-by-20_flach_b563f2725e.jpg"), "Es wird keine Exception geworfen, obwohl der Eintrag Hai schon vorhanden ist?");
     }
 
 }
