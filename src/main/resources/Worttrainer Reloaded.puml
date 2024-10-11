@@ -2,8 +2,10 @@
 'https://plantuml.com/class-diagram
 
 TestWorttrainerModel ..> WortListe : <use>
+TestWorttrainerModel ..> WortTrainer : <use>
 WortTrainer "1" --> "1" WortListe : - wortListe
 
+package Model {
 class WortListe {
 - wortListe: Map<String, String>
 - {static} URL_PATTERN: Pattern
@@ -18,24 +20,6 @@ class WortListe {
 + length(): int
 + {static} checkWort(wort: String): boolean
 + {static} checkUrl(url: String): boolean
-}
-
-class TestWorttrainerModel {
-- wortListe: WortListe
-- wortListe2: WortListe
-- wortListe3: WortListe
-+ setup() : void
-+ notNullEmptyInvalid() : void
-+ showTest() : void
-+ addingMatchingTest() : void
-+ getterTest(): void
-+ setterTest() : void
-+ lengthTest() : void
-+ deleteTest() : void
-+ getEintragTest() : void
-+ alreadyInListTest() : void
-+ wortCheckerTest() : void
-+ urlCheckerTest() : void
 }
 
 class WortTrainer {
@@ -55,6 +39,26 @@ class WortTrainer {
 + getKorrekt() : int
 + setKorrekt(korrekt : int) : void
 + reset(): void
+}
+}
+
+
+class TestWorttrainerModel {
+- wortListe: WortListe
+- wortListe2: WortListe
+- wortListe3: WortListe
++ setup() : void
++ notNullEmptyInvalid() : void
++ showTest() : void
++ addingMatchingTest() : void
++ getterTest(): void
++ setterTest() : void
++ lengthTest() : void
++ deleteTest() : void
++ getEintragTest() : void
++ alreadyInListTest() : void
++ wortCheckerTest() : void
++ urlCheckerTest() : void
 }
 
 @enduml

@@ -102,4 +102,42 @@ public class WortTrainer {
         else this.statistic.append("Das geht besser!");
         return this.statistic.toString();
     }
+
+    /**
+     * Getter-Methode des Attributs abgefragt, welche den
+     * aktuellen Wert für abgefragt liefert
+     * @return den neuen Wert des Attributs abgefragt
+     */
+    public int getAbgefragt(){
+        return this.abgefragt;
+    }
+
+    /**
+     * Setter-Methode des Attributs abgefragt, welche den
+     * neuen Wert für abgefragt setzt
+     * @return den neuen Wert des Attributs abgefragt
+     */
+    public void setAbgefragt(int abgefragt) {
+        if(abgefragt < 0) throw new IllegalArgumentException("Die Anzahl an gestellten Fragen kann nicht kleiner als 0 sein!");
+        else this.abgefragt = abgefragt;
+    }
+
+    /**
+     * Getter-Methode des Attributs korrekt, welche den
+     * aktuellen Wert von korrekt liefert
+     * @return den aktuellen Wert des Attributs korrekt
+     */
+    public int getKorrekt(){
+        return this.korrekt;
+    }
+
+    /**
+     * Setter-Methode des Attributs korrekt, welche den
+     * neuen Wert für korrekt setzt
+     * @return den neuen Wert des Attributs korrekt
+     */
+    public void setKorrekt(int korrekt) {
+        if(korrekt < 0) throw new IllegalArgumentException("Die Anzahl an korrekten Antworten kann nicht kleiner als 0 sein!");
+        else this.korrekt = korrekt;
+    }
 }
