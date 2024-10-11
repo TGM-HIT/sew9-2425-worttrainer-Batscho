@@ -20,20 +20,22 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
     private String speicherpfad;
 
     /**
-     * nicht relevant
-     * @param speicherpfad nicht verwendet
+     * Konstruktor, der einen Pfad für das Speichern setzt.
+     * @param speicherpfad Der Pfad, wo die Datei gespeichert werden soll (inkl. Dateiname).
      */
-    public SpeichernUndLaden(String speicherpfad) {}
+    public SpeichernUndLaden(String speicherpfad) {
+        this.setSpeicherpfad(speicherpfad);
+    }
 
     /**
      * Diese Methode speichern ist zum serialisierten Speichern eines WortTrainer-Objekts da und speichert diese
-     * "Session" in eine Json Datei welche dann später geladen und gelesen werden kann.
-     * @param wortTrainer ist die zu speichernde Session für den WortTrainer
+     * "Session" in eine JSON-Datei, welche dann später geladen und gelesen werden kann.
+     * @param wortTrainer ist die zu speichernde Session für den WortTrainer.
      */
     @Override
     public void speichern(WortTrainer wortTrainer) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();                     // Gson-Instanz mit Pretty-Printing
-        try (FileWriter fileWriter = new FileWriter(this.getSpeicherpfad())) {          // Öffnet den FileWriter für den Speicherpfad
+        try (FileWriter fileWriter = new FileWriter(this.speicherpfad)) {               // Öffnet den FileWriter für den Speicherpfad
             gson.toJson(wortTrainer, fileWriter);                                       // Serialisiert das WortTrainer-Objekt und schreibt es in die .json-Datei
             System.out.println("WortTrainer Session erfolgreich gespeichert unter: " + this.speicherpfad);
         } catch (IOException e) {
@@ -43,14 +45,14 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
     }
 
     /**
-     * Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht
-     * @return die gespeicherte WortTrainer Session
+     * Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht.
+     * @return die gespeicherte WortTrainer-Session.
      */
     @Override
     public WortTrainer laden() {
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader(speicherpfad)) {                            // Öffnet den FileReader für den Speicherpfad
-            WortTrainer wortTrainer = gson.fromJson(reader, WortTrainer.class);             // Deserialisiert das JSON zurück in ein WortTrainer-Objekt
+        try (FileReader reader = new FileReader(this.speicherpfad)) {                   // Öffnet den FileReader für den Speicherpfad
+            WortTrainer wortTrainer = gson.fromJson(reader, WortTrainer.class);         // Deserialisiert das JSON zurück in ein WortTrainer-Objekt
             System.out.println("WortTrainer Session erfolgreich geladen");
             return wortTrainer;
         } catch (IOException e) {
@@ -60,21 +62,21 @@ public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
     }
 
     /**
-     * Getter-Methode des Attributs speicherpfad, welche den
-     * aktuellen Wert von speicherpfad liefert
-     * @return den aktuellen Wert des Attributs speicherpfad
+     * Getter-Methode des Attributs speicherpfad, welche den aktuellen Wert von speicherpfad liefert.
+     * @return den aktuellen Wert des Attributs speicherpfad.
      */
-    public String getSpeicherpfad(){
-        return this.speicherpfad += "/worttrainer_session.json";
+    public String getSpeicherpfad() {
+        return this.speicherpfad;
     }
 
     /**
-     * Setter-Methode des Attributs speicherpfad, welche den
-     * neuen Wert für den speicherpfad setzt
-     * @param speicherpfad ist der zu setzende neue Pfad
+     * Setter-Methode des Attributs speicherpfad, welche den neuen Wert für den speicherpfad setzt.
+     * @param speicherpfad ist der zu setzende neue Pfad (inkl. Dateiname).
      */
     public void setSpeicherpfad(String speicherpfad) {
-        if(speicherpfad == null || speicherpfad.isEmpty()) throw new IllegalArgumentException("Der Speicherpfad darf nicht null oder leer sein!");
+        if (speicherpfad == null || speicherpfad.isEmpty()) {
+            throw new IllegalArgumentException("Der Speicherpfad darf nicht null oder leer sein!");
+        }
         this.speicherpfad = speicherpfad;
     }
 }
