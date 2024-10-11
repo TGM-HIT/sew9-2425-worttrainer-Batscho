@@ -59,7 +59,7 @@ public class WortTrainer {
     }
 
     /**
-     * Diese Methode check checkt ob ein übergebenes Wort mit dem Wort vom aktuellen Eintrag übereinstimmt
+     * Diese Methode check checkt ob ein übergebenes Wort mit dem Wort vom aktuellen Eintrag exakt übereinstimmt
      * @param wort ist das Wort, welchs verglichen wird mit der korrekten Antwort
      * @return ob die Wörter übereinstimmen und somit die Statistik sich verändert
      */
@@ -73,4 +73,33 @@ public class WortTrainer {
         return false;
     }
 
+    /**
+     * Diese Methode check checkt ob ein übergebenes Wort mit dem Wort vom aktuellen Eintrag übereinstimmt ohne Case-sensetivity
+     * @param wort ist das Wort, welchs verglichen wird mit der korrekten Antwort
+     * @return ob die Wörter übereinstimmen und somit die Statistik sich verändert
+     */
+    public boolean checkIgnoreCase(String wort) throws IllegalArgumentException{
+        this.abgefragt++;
+        WortListe.checkWort(wort);
+        if(this.aktuell[0].equalsIgnoreCase(wort)) {
+            this.korrekt++;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Das ist die getter-Methode die das Attribut statistic als String in einer schöneren und motivierenden Form darstellt
+     * @return die Rückgabe des zusammengesetzten Strings aus dem ursprünglichen StringBuilder
+     */
+    public String getStatistic() {
+        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
+        this.statistic.append("\nStatistik:\n")
+                .append("Abgefragt: ").append(this.abgefragt).append("\n")
+                .append("Korrekte: ").append(this.korrekt).append("\n")
+                .append("Score: ").append(String.format("%.2f", score)).append("%\n");  // Score auf 2 Nachkommastellen formatiert
+        if(score >= 89) this.statistic.append("Super mach weiter so!");
+        else this.statistic.append("Das geht besser!");
+        return this.statistic.toString();
+    }
 }
