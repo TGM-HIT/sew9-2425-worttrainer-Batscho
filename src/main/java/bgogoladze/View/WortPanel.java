@@ -14,23 +14,57 @@ import java.awt.*;
  * @version 11-10-2024
  */
 public class WortPanel extends JPanel {
+    /**
+     * wortController
+     */
     private WortController wortController;
+    /**
+     * bAdd
+     */
     private final JButton bAdd = new JButton("Wort hinzufügen");
+    /**
+     * bReset
+     */
     private final JButton bReset = new JButton("Zurücksetzen");
+    /**
+     * textField
+     */
     private final JTextField textField = new JTextField();
+    /**
+     * image
+     */
     private final JLabel image = new JLabel();
+    /**
+     * question
+     */
     private final JLabel question = new JLabel("Welches Wort wird unten dargestellt (Eingabe zum Überprüfen)?");
+    /**
+     * correct
+     */
     private final JLabel correct = new JLabel("Richtige Wörter:");
+    /**
+     * amount
+     */
     private final JLabel amount = new JLabel("Anzahl Wörter:");
+    /**
+     * correctCounter
+     */
     private final JLabel correctCounter = new JLabel("0");
+    /**
+     * amountCounter
+     */
     private final JLabel amountCounter = new JLabel("0");
 
     /**
      * Dieser Konstruktor ist der Standardkonstruktor der keine Parameter
      * enthält und ein einfaches GUI erstellt mit meinem Namen als Titel
      * im Frame, und dem Inhalt.
+     * @param wortController ist der Controller welcher alles verwaltet
+     * @param picture ist das zu setzende Bild
+     * @param correct ist die Anzahl an korrekten Antworten
+     * @param amount ist die Anzahl an gestellten Fragen
      */
-    public WortPanel(WortController wortController, ImageIcon picture, int correct, int amount) throws IOException {
+    public WortPanel(WortController wortController, ImageIcon picture, int correct, int amount) {
         this.wortController = wortController;
         setLayout(new BorderLayout(20, 0));
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -55,10 +89,10 @@ public class WortPanel extends JPanel {
 
         // Unterer Bereich der GUI
         JPanel unten = new JPanel(new GridLayout(2, 3, 0, 10));
-        unten.add(correct);
+        unten.add(this.correct);
         unten.add(this.correctCounter);
         unten.add(this.bReset);
-        unten.add(amount);
+        unten.add(this.amount);
         unten.add(this.amountCounter);
         unten.add(this.bAdd);
 

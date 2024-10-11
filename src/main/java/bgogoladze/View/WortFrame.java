@@ -12,6 +12,13 @@ import java.awt.*;
  * @version 11-10-2024
  */
 public class WortFrame extends JFrame {
+    /**
+     * Konstruktor für das WortFrame.
+     * Erstellt das Hauptfenster des Worttrainers mit einem Titel und einem Layout-Panel.
+     * Initialisiert grundlegende Einstellungen wie Schließen-Verhalten, Menüleiste und
+     * die Größe des Fensters.
+     * @param layoutPanel Das Panel, das im Hauptframe angezeigt wird (z. B. das WortPanel).
+     */
     public WortFrame(WortPanel layoutPanel) {
         super("[GK] 9a.1: Worttrainer Reloaded");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,11 +29,16 @@ public class WortFrame extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Erstellt eine benutzerdefinierte Menüleiste (JMenuBar) für das Worttrainer-Fenster.
+     * Die Menüleiste enthält ein zentriertes Label mit der Aufschrift "Worttrainer".
+     * @return Die konfigurierte JMenuBar.
+     */
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setOpaque(true);
         menuBar.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JLabel label = new JLabel("Worttrainer");
+        JLabel label = new JLabel("[GK] 9a.1: Worttrainer Reloaded");
         label.setForeground(Color.WHITE);
         menuBar.add(label);
         menuBar.setBackground(new Color(11, 11, 161));

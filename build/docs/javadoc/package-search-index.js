@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"bgogoladze.Model"}];updateSearchResults();
+packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"bgogoladze.Controller"},{"l":"bgogoladze.Model"},{"l":"bgogoladze.View"}];updateSearchResults();

@@ -26,6 +26,7 @@ loadScripts(document, 'script');</script>
 <div class="top-nav" id="navbar-top"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Navigationslinks umschalten"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button>
 <div class="skip-nav"><a href="#skip-navbar-top" title="Navigations-Links überspringen">Navigations-Links überspringen</a></div>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../index.html">Überblick</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Klasse</li>
 <li><a href="package-tree.html">Baum</a></li>
@@ -113,7 +114,7 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <div class="table-header col-last">Beschreibung</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">SpeichernUndLaden</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;speicherpfad)</code></div>
 <div class="col-last even-row-color">
-<div class="block">nicht relevant</div>
+<div class="block">Konstruktor, der einen Pfad für das Speichern setzt.</div>
 </div>
 </div>
 </section>
@@ -132,25 +133,23 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpeicherpfad()" class="member-name-link">getSpeicherpfad</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Getter-Methode des Attributs speicherpfad, welche den
- aktuellen Wert von speicherpfad liefert</div>
+<div class="block">Getter-Methode des Attributs speicherpfad, welche den aktuellen Wert von speicherpfad liefert.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#laden()" class="member-name-link">laden</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht</div>
+<div class="block">Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpeicherpfad(java.lang.String)" class="member-name-link">setSpeicherpfad</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;speicherpfad)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Setter-Methode des Attributs speicherpfad, welche den
- neuen Wert für den speicherpfad setzt</div>
+<div class="block">Setter-Methode des Attributs speicherpfad, welche den neuen Wert für den speicherpfad setzt.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#speichern(bgogoladze.Model.WortTrainer)" class="member-name-link">speichern</a><wbr>(<a href="WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a>&nbsp;wortTrainer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Diese Methode speichern ist zum serialisierten Speichern eines WortTrainer-Objekts da und speichert diese
- "Session" in eine Json Datei welche dann später geladen und gelesen werden kann.</div>
+ "Session" in eine JSON-Datei, welche dann später geladen und gelesen werden kann.</div>
 </div>
 </div>
 </div>
@@ -173,10 +172,10 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>SpeichernUndLaden</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SpeichernUndLaden</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;speicherpfad)</span></div>
-<div class="block">nicht relevant</div>
+<div class="block">Konstruktor, der einen Pfad für das Speichern setzt.</div>
 <dl class="notes">
 <dt>Parameter:</dt>
-<dd><code>speicherpfad</code> - nicht verwendet</dd>
+<dd><code>speicherpfad</code> - Der Pfad, wo die Datei gespeichert werden soll (inkl. Dateiname).</dd>
 </dl>
 </section>
 </li>
@@ -193,12 +192,12 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <h3>speichern</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">speichern</span><wbr><span class="parameters">(<a href="WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a>&nbsp;wortTrainer)</span></div>
 <div class="block">Diese Methode speichern ist zum serialisierten Speichern eines WortTrainer-Objekts da und speichert diese
- "Session" in eine Json Datei welche dann später geladen und gelesen werden kann.</div>
+ "Session" in eine JSON-Datei, welche dann später geladen und gelesen werden kann.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="SpeichernUndLadenStrategie.html#speichern(bgogoladze.Model.WortTrainer)">speichern</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgogoladze.Model">SpeichernUndLadenStrategie</a></code></dd>
 <dt>Parameter:</dt>
-<dd><code>wortTrainer</code> - ist die zu speichernde Session für den WortTrainer</dd>
+<dd><code>wortTrainer</code> - ist die zu speichernde Session für den WortTrainer.</dd>
 </dl>
 </section>
 </li>
@@ -206,12 +205,12 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <section class="detail" id="laden()">
 <h3>laden</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></span>&nbsp;<span class="element-name">laden</span>()</div>
-<div class="block">Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht</div>
+<div class="block">Diese Methode laden ist für das entsprechende Laden der gespeicherten WortTrainer-Sitzung gedacht.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="SpeichernUndLadenStrategie.html#laden()">laden</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgogoladze.Model">SpeichernUndLadenStrategie</a></code></dd>
 <dt>Gibt zurück:</dt>
-<dd>die gespeicherte WortTrainer Session</dd>
+<dd>die gespeicherte WortTrainer-Session.</dd>
 </dl>
 </section>
 </li>
@@ -219,11 +218,10 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <section class="detail" id="getSpeicherpfad()">
 <h3>getSpeicherpfad</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSpeicherpfad</span>()</div>
-<div class="block">Getter-Methode des Attributs speicherpfad, welche den
- aktuellen Wert von speicherpfad liefert</div>
+<div class="block">Getter-Methode des Attributs speicherpfad, welche den aktuellen Wert von speicherpfad liefert.</div>
 <dl class="notes">
 <dt>Gibt zurück:</dt>
-<dd>den aktuellen Wert des Attributs speicherpfad</dd>
+<dd>den aktuellen Wert des Attributs speicherpfad.</dd>
 </dl>
 </section>
 </li>
@@ -231,11 +229,10 @@ implements <a href="SpeichernUndLadenStrategie.html" title="Schnittstelle in bgo
 <section class="detail" id="setSpeicherpfad(java.lang.String)">
 <h3>setSpeicherpfad</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSpeicherpfad</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;speicherpfad)</span></div>
-<div class="block">Setter-Methode des Attributs speicherpfad, welche den
- neuen Wert für den speicherpfad setzt</div>
+<div class="block">Setter-Methode des Attributs speicherpfad, welche den neuen Wert für den speicherpfad setzt.</div>
 <dl class="notes">
 <dt>Parameter:</dt>
-<dd><code>speicherpfad</code> - ist der zu setzende neue Pfad</dd>
+<dd><code>speicherpfad</code> - ist der zu setzende neue Pfad (inkl. Dateiname).</dd>
 </dl>
 </section>
 </li>
