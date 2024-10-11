@@ -43,6 +43,11 @@ class WortTrainer {
 + getWortListe() : WortListe
 + reset(): void
 }
+
+interface SpeichernUndLadenStrategie {
++ speichern(wortTrainer : WortTrainer) : void
++ laden() : WortTrainer
+}
 }
 
 
