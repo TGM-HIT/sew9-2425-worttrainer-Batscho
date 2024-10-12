@@ -104,7 +104,6 @@ package View {
 class WortFrame {
 + WortFrame(layoutPanel : WortPanel)
 - createMenuBar() : JMenuBar
-+ {static} main(args : Strins[]) : void
 }
 class WortPanel {
 - wortController: WortController
@@ -151,7 +150,7 @@ class WortController {
 + windowDeiconified(e : WindowEvent) : void
 + windowActivated(e : WindowEvent) : void
 + windowDeactivated(e : WindowEvent) : void
-+ main(args : String[]) : void
++ {static} main(args : String[]) : void
 }
 }
 @enduml

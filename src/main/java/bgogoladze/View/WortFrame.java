@@ -45,16 +45,4 @@ public class WortFrame extends JFrame {
         menuBar.setPreferredSize(new Dimension(200, 30));
         return menuBar;
     }
-    /**
-     * Ausführen der Klasse WortFrame
-     * @param args wird nicht verwendet
-     */
-    /*public static void main(String [] args) {
-        try {
-            WortPanel p = new WortPanel();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        new WortFrame();
-    }*/
 }
