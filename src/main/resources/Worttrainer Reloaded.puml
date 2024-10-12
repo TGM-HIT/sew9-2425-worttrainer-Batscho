@@ -49,6 +49,7 @@ class WortTrainer {
 - aktuell : String[2]
 - abgefragt : int
 - korrekt : int
+- / falsche : int
 - / statistic : StringBuilder
 + WortTrainer(wortListe : WortListe)
 + ausgewaehlt() : String[]
@@ -116,13 +117,15 @@ class WortPanel {
 - question: JLabel
 - correct: JLabel
 - amount: JLabel
+- wrong: JLabel
 - correctCounter: JLabel
 - amountCounter: JLabel
+- wrongCounter: JLabel
 + WortPanel(wortController: WortController, correct: int, amount: int)
 + setImageUrl(String url): void
 + getTextfield(): String
 + setButtonEnabled(enabled : boolean) : void
-+ refresh(correctCounter: int, amountCounter: int): void
++ refresh(correctCounter: int, amountCounter: int, wrongCounter: int): void
 + reset(): void
 }
 }
