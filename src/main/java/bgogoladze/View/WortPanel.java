@@ -54,7 +54,11 @@ public class WortPanel extends JPanel {
     /**
      * amount
      */
-    private final JLabel amount = new JLabel("Anzahl Wörter:");
+    private final JLabel amount = new JLabel("Insgesamt Wörter:");
+    /**
+     * wrong
+     */
+    private final JLabel wrong = new JLabel("Falsche Wörter:");
     /**
      * correctCounter
      */
@@ -63,6 +67,10 @@ public class WortPanel extends JPanel {
      * amountCounter
      */
     private final JLabel amountCounter = new JLabel("0");
+    /**
+     * wrongCounter
+     */
+    private final JLabel wrongCounter = new JLabel("0");
 
     /**
      * Dieser Konstruktor ist der Standardkonstruktor der keine Parameter
@@ -89,6 +97,7 @@ public class WortPanel extends JPanel {
 
         this.correctCounter.setText(String.valueOf(correct));
         this.amountCounter.setText(String.valueOf(amount));
+        this.amountCounter.setText(String.valueOf(amount - correct));
 
         // Oberer Bereich der GUI
         JPanel oben = new JPanel(new GridLayout(2, 2, 0, 10));
@@ -104,13 +113,15 @@ public class WortPanel extends JPanel {
 
 
         // Unterer Bereich der GUI
-        JPanel unten = new JPanel(new GridLayout(2, 3, 0, 10));
+        JPanel unten = new JPanel(new GridLayout(3, 3, 0, 10));
         unten.add(this.correct);
         unten.add(this.correctCounter);
         unten.add(this.bSave);
+        unten.add(this.wrong);
+        unten.add(this.wrongCounter);
+        unten.add(this.bLoad);
         unten.add(this.amount);
         unten.add(this.amountCounter);
-        unten.add(this.bLoad);
 
         // Hinzufügen der Container zum Top-Level-Container
         super.add(oben, BorderLayout.PAGE_START);
@@ -124,9 +135,9 @@ public class WortPanel extends JPanel {
      * @param url ist die URL des Bildes in der GUI
      */
     public void setImageUrl(String url) throws MalformedURLException {
-        this.image.getImage().getScaledInstance(650, 450, Image.SCALE_SMOOTH);
         this.image = new ImageIcon(new URL(url));
-        this.imageLabel.setIcon(this.image);
+        Image img = this.image.getImage().getScaledInstance(750, 550, Image.SCALE_SMOOTH);
+        this.imageLabel.setIcon(new ImageIcon(img));
     }
 
     /**
@@ -155,11 +166,12 @@ public class WortPanel extends JPanel {
      * @param amountCounter ist der Zähler für die Anzahl an eingegebenen Wörtern
      //@param url ist das Image welches hinzugefügt werden soll
      */
-    public void refresh( int correctCounter, int amountCounter) {
+    public void refresh( int correctCounter, int amountCounter, int wrongCounter) {
         this.textField.setText("");
         //if (isCorrect) setImageUrl(url);
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
+        this.wrongCounter.setText(String.valueOf(wrongCounter));
     }
 
     /**
@@ -171,6 +183,7 @@ public class WortPanel extends JPanel {
         this.textField.setText("");
         this.correctCounter.setText("0");
         this.amountCounter.setText("0");
+        this.wrongCounter.setText("0");
         this.image = new ImageIcon();
     }
 }

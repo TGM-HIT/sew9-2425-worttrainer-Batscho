@@ -22,6 +22,7 @@ public class WortTrainer {
     private String[] aktuell;           //Der aktuelle Worteintrag
     private int abgefragt;              //Die Anzahl an Wörtern die abgefragt wurden
     private int korrekt;                //Die Anzahl der abgefragten Wörter die erraten wurden
+    private int falsche;                //Die Anzahl der abgefragten Wörter die erraten wurden
     private StringBuilder statistic = new StringBuilder();    //Ein abgeleitetes Attribut welches die Statistik angibt
 
     /**
@@ -96,8 +97,9 @@ public class WortTrainer {
     public String getStatistic() {
         double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
         this.statistic.append("\nStatistik:\n")
-                .append("Abgefragt: ").append(this.abgefragt).append("\n")
-                .append("Korrekte: ").append(this.korrekt).append("\n")
+                .append("Abgefragt: ").append(this.getAbgefragt()).append("\n")
+                .append("Korrekte: ").append(this.getKorrekt()).append("\n")
+                .append("Falsche: ").append(this.getFalsche()).append("\n")
                 .append("Score: ").append(String.format("%.2f", score)).append("%\n");  // Score auf 2 Nachkommastellen formatiert
         if(score >= 89) this.statistic.append("Super mach weiter so!\n");
         else this.statistic.append("Das geht besser!\n");
@@ -107,7 +109,8 @@ public class WortTrainer {
         Map<String, Object> statistikMap = new LinkedHashMap<>();
         statistikMap.put("Zweck", "Worttrainer Statistik");
         statistikMap.put("Abgefragt", this.getAbgefragt());
-        statistikMap.put("Korrekt", this.getKorrekt());
+        statistikMap.put("Korrekte", this.getKorrekt());
+        statistikMap.put("Falsche", this.getFalsche());
         statistikMap.put("Score", String.format("%.2f", score));
         statistikMap.put("Kommentar", kommentar);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -169,6 +172,15 @@ public class WortTrainer {
     public void setAktuell(String[] eintrag) {
         if(eintrag == null) throw new NullPointerException("Der zu setzende Eintrag darf nicht null sein!");
         else this.aktuell = eintrag;
+    }
+
+    /**
+     * Getter-Methode des Attributs falsch, welche den
+     * aktuellen Wert von falsch liefert
+     * @return den aktuellen Wert des Attributs falsch
+     */
+    public int getFalsche(){
+        return this.falsche = this.getAbgefragt() - this.getKorrekt();
     }
 
     /**

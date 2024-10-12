@@ -125,7 +125,7 @@ class WortPanel {
 + setImageUrl(String url): void
 + getTextfield(): String
 + setButtonEnabled(enabled : boolean) : void
-+ refresh(correctCounter: int, amountCounter: int): void
++ refresh(correctCounter: int, amountCounter: int, wrongCounter: int): void
 + reset(): void
 }
 }
