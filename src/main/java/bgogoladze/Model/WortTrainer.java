@@ -53,11 +53,7 @@ public class WortTrainer {
      * @return den aktuell ausgewählten Worteintrag in der Form eines String Arrays mit Key und Value
      */
     public String[] ausgewaehlt() {
-        if(this.aktuell != null) {
-            return this.aktuell;
-        } else {
             return this.randomWortEintrag();
-        }
     }
 
     /**
@@ -95,7 +91,7 @@ public class WortTrainer {
      * @return die Rückgabe des zusammengesetzten Strings aus dem ursprünglichen StringBuilder
      */
     public String getStatistic() {
-        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
+        /*double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
         this.statistic.append("\nStatistik:\n")
                 .append("Abgefragt: ").append(this.getAbgefragt()).append("\n")
                 .append("Korrekte: ").append(this.getKorrekt()).append("\n")
@@ -103,8 +99,8 @@ public class WortTrainer {
                 .append("Score: ").append(String.format("%.2f", score)).append("%\n");  // Score auf 2 Nachkommastellen formatiert
         if(score >= 89) this.statistic.append("Super mach weiter so!\n");
         else this.statistic.append("Das geht besser!\n");
-        return this.statistic.toString();
-        /*double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;
+        return this.statistic.toString();*/
+        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;
         String kommentar = score >= 89 ? "Super mach weiter so!" : "Das geht besser!";
         Map<String, Object> statistikMap = new LinkedHashMap<>();
         statistikMap.put("Zweck", "Worttrainer Statistik");
@@ -114,7 +110,7 @@ public class WortTrainer {
         statistikMap.put("Score", String.format("%.2f", score));
         statistikMap.put("Kommentar", kommentar);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(statistikMap);*/
+        return gson.toJson(statistikMap);
     }
 
     /**

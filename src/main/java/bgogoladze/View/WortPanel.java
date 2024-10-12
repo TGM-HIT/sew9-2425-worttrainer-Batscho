@@ -133,6 +133,7 @@ public class WortPanel extends JPanel {
      * Diese Methode setImage setzt das als Parameter übergebene Bild für das Attribut
      * image um dieses dann in ein JLabel zu setzen welcher wie ein "Placeholder" wirkt
      * @param url ist die URL des Bildes in der GUI
+     * @throws MalformedURLException wenn die URL ungültig ist
      */
     public void setImageUrl(String url) throws MalformedURLException {
         this.image = new ImageIcon(new URL(url));
@@ -164,7 +165,7 @@ public class WortPanel extends JPanel {
      //@param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll
      * @param correctCounter ist der Zähler für die korrekte Anzahl an Wörtern
      * @param amountCounter ist der Zähler für die Anzahl an eingegebenen Wörtern
-     //@param url ist das Image welches hinzugefügt werden soll
+     * @param wrongCounter ist der Zähler für die Anzahl an falschen Eingaben
      */
     public void refresh( int correctCounter, int amountCounter, int wrongCounter) {
         this.textField.setText("");

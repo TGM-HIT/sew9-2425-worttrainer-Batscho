@@ -90,12 +90,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Alle implementierten Schnittstellen:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/EventListener.html" title="Klasse oder Schnittstelle in java.util" class="external-link">EventListener</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/EventListener.html" title="Klasse oder Schnittstelle in java.util" class="external-link">EventListener</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentListener</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">WortController</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionListener</a>, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a>, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></span></div>
+implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionListener</a>, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentListener</a>, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a>, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></span></div>
 <div class="block">Diese Klasse namens WortController ist in MVC die sogenannte Control-Class, welche
  dafür sorgt, dass Logik (Model-Class) und GUI-Oberfläche (View-Class) nicht direkt
  miteinander kommunizieren und in der Controller Klasse wird der Ablauf gesteuert und
@@ -113,7 +113,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <div class="table-header col-last">Beschreibung</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(bgogoladze.Model.WortTrainer)" class="member-name-link">WortController</a><wbr>(<a href="../Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a>&nbsp;wortTrainer)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Konstruktor, der die Model-Klasse WortTrainer initialisiert und eine gültige Auswahl trifft</div>
+<div class="block">Dies ist der Standardkonstruktor welcher einen Worttrainer als Parameter übernimmt und
+ alles managed was es im MVC Modell gibt</div>
 </div>
 </div>
 </section>
@@ -131,61 +132,75 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <div class="table-header col-last">Beschreibung</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#actionPerformed(java.awt.event.ActionEvent)" class="member-name-link">actionPerformed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionEvent</a>&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Das ist der ActionListener wo die Action performed
+ wird mittels Steuerungsmethoden für Buttons</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changedUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">changedUpdate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">insertUpdate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyPressed(java.awt.event.KeyEvent)" class="member-name-link">keyPressed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyReleased(java.awt.event.KeyEvent)" class="member-name-link">keyReleased</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a key has been released.</div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyEvent</code></a>
+ Wird ausgelöst, wenn eine Taste freigegeben wurde, in diesem Fall ENTER.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyTyped(java.awt.event.KeyEvent)" class="member-name-link">keyTyped</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a key has been typed.</div>
-</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Ausführen des Controllers zum Finale</div>
+<div class="block">Das ist die main-Methode in der die WortController Instanz erzeugt wird</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowActivated(java.awt.event.WindowEvent)" class="member-name-link">windowActivated</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">removeUpdate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when the Window is set to be the active Window.</div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowClosed(java.awt.event.WindowEvent)" class="member-name-link">windowClosed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a window has been closed as the result
- of calling dispose on the window.</div>
-</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowActivated(java.awt.event.WindowEvent)" class="member-name-link">windowActivated</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowClosing(java.awt.event.WindowEvent)" class="member-name-link">windowClosing</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowClosed(java.awt.event.WindowEvent)" class="member-name-link">windowClosed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowDeactivated(java.awt.event.WindowEvent)" class="member-name-link">windowDeactivated</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowClosing(java.awt.event.WindowEvent)" class="member-name-link">windowClosing</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a Window is no longer the active Window.</div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowEvent</code></a>
+ Wird aufgerufen, wenn der Benutzer versucht, das Fenster
+ über das Systemmenü des Fensters zu schließen.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowDeiconified(java.awt.event.WindowEvent)" class="member-name-link">windowDeiconified</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a window is changed from a minimized
- to a normal state.</div>
-</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowDeactivated(java.awt.event.WindowEvent)" class="member-name-link">windowDeactivated</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowIconified(java.awt.event.WindowEvent)" class="member-name-link">windowIconified</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked when a window is changed from a normal to a
- minimized state.</div>
-</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowDeiconified(java.awt.event.WindowEvent)" class="member-name-link">windowDeiconified</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowOpened(java.awt.event.WindowEvent)" class="member-name-link">windowOpened</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Invoked the first time a window is made visible.</div>
-</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowIconified(java.awt.event.WindowEvent)" class="member-name-link">windowIconified</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#windowOpened(java.awt.event.WindowEvent)" class="member-name-link">windowOpened</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -207,10 +222,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="&lt;init&gt;(bgogoladze.Model.WortTrainer)">
 <h3>WortController</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">WortController</span><wbr><span class="parameters">(<a href="../Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a>&nbsp;wortTrainer)</span></div>
-<div class="block">Konstruktor, der die Model-Klasse WortTrainer initialisiert und eine gültige Auswahl trifft</div>
+<div class="block">Dies ist der Standardkonstruktor welcher einen Worttrainer als Parameter übernimmt und
+ alles managed was es im MVC Modell gibt</div>
 <dl class="notes">
 <dt>Parameter:</dt>
-<dd><code>wortTrainer</code> - Die Model-Klasse, die den Rechtschreibtrainer repräsentiert</dd>
+<dd><code>wortTrainer</code> - ist der Parameter welcher entscheidend für die Kontrolle ist</dd>
 </dl>
 </section>
 </li>
@@ -226,9 +242,84 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="actionPerformed(java.awt.event.ActionEvent)">
 <h3>actionPerformed</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">actionPerformed</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionEvent</a>&nbsp;e)</span></div>
+<div class="block">Das ist der ActionListener wo die Action performed
+ wird mittels Steuerungsmethoden für Buttons</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html#actionPerformed(java.awt.event.ActionEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">actionPerformed</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/ActionListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">ActionListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - ist das event welches performed wird</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="insertUpdate(javax.swing.event.DocumentEvent)">
+<h3>insertUpdate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insertUpdate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</span></div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+<dl class="notes">
+<dt>Angegeben von:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html#insertUpdate(javax.swing.event.DocumentEvent)" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">insertUpdate</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - the event to be processed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="removeUpdate(javax.swing.event.DocumentEvent)">
+<h3>removeUpdate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeUpdate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</span></div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+<dl class="notes">
+<dt>Angegeben von:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html#removeUpdate(javax.swing.event.DocumentEvent)" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">removeUpdate</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - the event to be processed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="changedUpdate(javax.swing.event.DocumentEvent)">
+<h3>changedUpdate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">changedUpdate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentEvent</a>&nbsp;e)</span></div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+<dl class="notes">
+<dt>Angegeben von:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html#changedUpdate(javax.swing.event.DocumentEvent)" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">changedUpdate</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link">DocumentListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - the event to be processed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="keyReleased(java.awt.event.KeyEvent)">
+<h3>keyReleased</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keyReleased</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</span></div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyEvent</code></a>
+ Wird ausgelöst, wenn eine Taste freigegeben wurde, in diesem Fall ENTER.
+ Siehe die Klassenbeschreibung für KeyEvent für eine Definition des Ereignisses "Taste freigegeben".</div>
+<dl class="notes">
+<dt>Angegeben von:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html#keyReleased(java.awt.event.KeyEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">keyReleased</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - the event to be processed</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="keyTyped(java.awt.event.KeyEvent)">
+<h3>keyTyped</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keyTyped</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</span></div>
+<dl class="notes">
+<dt>Angegeben von:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html#keyTyped(java.awt.event.KeyEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">keyTyped</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code></dd>
 </dl>
 </section>
 </li>
@@ -243,30 +334,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 </section>
 </li>
 <li>
-<section class="detail" id="keyReleased(java.awt.event.KeyEvent)">
-<h3>keyReleased</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keyReleased</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a key has been released.
- See the class description for <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyEvent</code></a> for a definition of
- a key released event.</div>
-<dl class="notes">
-<dt>Angegeben von:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html#keyReleased(java.awt.event.KeyEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">keyReleased</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="windowOpened(java.awt.event.WindowEvent)">
 <h3>windowOpened</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowOpened</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked the first time a window is made visible.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowOpened(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowOpened</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -274,9 +347,15 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowClosing(java.awt.event.WindowEvent)">
 <h3>windowClosing</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowClosing</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowEvent</code></a>
+ Wird aufgerufen, wenn der Benutzer versucht, das Fenster
+ über das Systemmenü des Fensters zu schließen.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowClosing(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowClosing</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
+<dt>Parameter:</dt>
+<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -284,13 +363,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowClosed(java.awt.event.WindowEvent)">
 <h3>windowClosed</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowClosed</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a window has been closed as the result
- of calling dispose on the window.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowClosed(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowClosed</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -298,21 +373,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowIconified(java.awt.event.WindowEvent)">
 <h3>windowIconified</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowIconified</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a window is changed from a normal to a
- minimized state. For many platforms, a minimized window
- is displayed as the icon specified in the window's
- iconImage property.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowIconified(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowIconified</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
-<dt>Siehe auch:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/Frame.html#setIconImage(java.awt.Image)" title="Klasse oder Schnittstelle in java.awt" class="external-link"><code>Frame.setIconImage(java.awt.Image)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
@@ -320,13 +383,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowDeiconified(java.awt.event.WindowEvent)">
 <h3>windowDeiconified</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowDeiconified</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a window is changed from a minimized
- to a normal state.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowDeiconified(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowDeiconified</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -334,17 +393,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowActivated(java.awt.event.WindowEvent)">
 <h3>windowActivated</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowActivated</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when the Window is set to be the active Window. Only a Frame or
- a Dialog can be the active Window. The native windowing system may
- denote the active Window or its children with special decorations, such
- as a highlighted title bar. The active Window is always either the
- focused Window, or the first Frame or Dialog that is an owner of the
- focused Window.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowActivated(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowActivated</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -352,17 +403,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="windowDeactivated(java.awt.event.WindowEvent)">
 <h3>windowDeactivated</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">windowDeactivated</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a Window is no longer the active Window. Only a Frame or a
- Dialog can be the active Window. The native windowing system may denote
- the active Window or its children with special decorations, such as a
- highlighted title bar. The active Window is always either the focused
- Window, or the first Frame or Dialog that is an owner of the focused
- Window.</div>
 <dl class="notes">
 <dt>Angegeben von:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html#windowDeactivated(java.awt.event.WindowEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">windowDeactivated</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">WindowListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>
@@ -370,25 +413,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desk
 <section class="detail" id="main(java.lang.String[])">
 <h3>main</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
-<div class="block">Ausführen des Controllers zum Finale</div>
+<div class="block">Das ist die main-Methode in der die WortController Instanz erzeugt wird</div>
 <dl class="notes">
 <dt>Parameter:</dt>
 <dd><code>args</code> - wird nicht verwendet</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="keyTyped(java.awt.event.KeyEvent)">
-<h3>keyTyped</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keyTyped</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyEvent</a>&nbsp;e)</span></div>
-<div class="block">Invoked when a key has been typed.
- See the class description for <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyEvent</code></a> for a definition of
- a key typed event.</div>
-<dl class="notes">
-<dt>Angegeben von:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html#keyTyped(java.awt.event.KeyEvent)" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">keyTyped</a></code>&nbsp;in Schnittstelle&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link">KeyListener</a></code></dd>
-<dt>Parameter:</dt>
-<dd><code>e</code> - the event to be processed</dd>
 </dl>
 </section>
 </li>

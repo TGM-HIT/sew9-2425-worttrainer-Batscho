@@ -38,6 +38,11 @@ public class WortController implements ActionListener, DocumentListener, KeyList
      */
     private SpeichernUndLadenStrategie speicherStrategie;  // Speichern/Laden Strategie
 
+    /**
+     * Dies ist der Standardkonstruktor welcher einen Worttrainer als Parameter übernimmt und
+     * alles managed was es im MVC Modell gibt
+     * @param wortTrainer ist der Parameter welcher entscheidend für die Kontrolle ist
+     */
     public WortController(WortTrainer wortTrainer) {
         this.wortTrainer = wortTrainer;
         this.wortPanel = new WortPanel(this, wortTrainer.getKorrekt(), wortTrainer.getAbgefragt());
@@ -47,17 +52,21 @@ public class WortController implements ActionListener, DocumentListener, KeyList
         updateImage();  // Initiales Bild setzen
     }
 
-    // Methode, um das aktuelle Bild zu setzen
+    /**
+     * Diese Methode updateImage ist dazu da um das aktuelle Bild zu setzen und immer wieder zu ändern
+     */
     private void updateImage() {
         try {
-            String[] aktuellesWort = wortTrainer.ausgewaehlt();
+            String[] aktuellesWort = this.wortTrainer.ausgewaehlt();
             this.wortPanel.setImageUrl(aktuellesWort[1]);  // URL vom Wortpaar holen und im Panel setzen
         } catch (MalformedURLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
         }
     }
 
-    // Methode zur Überprüfung der Eingabe und Aktualisierung der Statistiken
+    /**
+     * Diese Methode checkUserInput dient zum Überprüfen der Eingabe im Textfield ob es Enabled sein soll oder nicht
+     */
     private void checkUserInput() {
         String userInput = this.wortPanel.getTextfield();
         this.wortPanel.setButtonEnabled(!userInput.isBlank());
@@ -133,18 +142,34 @@ public class WortController implements ActionListener, DocumentListener, KeyList
         }
     }
 
-
-    // Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)
+    /**
+     * {@link DocumentListener}
+     * {@link DocumentEvent}
+     * Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)
+     * @param e the event to be processed
+     */
     @Override
     public void insertUpdate(DocumentEvent e) {
         this.wortPanel.setButtonEnabled(!this.wortPanel.getTextfield().isBlank());
     }
 
+    /**
+     * {@link DocumentListener}
+     * {@link DocumentEvent}
+     * Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)
+     * @param e the event to be processed
+     */
     @Override
     public void removeUpdate(DocumentEvent e) {
         wortPanel.setButtonEnabled(!wortPanel.getTextfield().isBlank());
     }
 
+    /**
+     * {@link DocumentListener}
+     * {@link DocumentEvent}
+     * Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)
+     * @param e the event to be processed
+     */
     @Override
     public void changedUpdate(DocumentEvent e) {
         wortPanel.setButtonEnabled(!wortPanel.getTextfield().isBlank());
@@ -220,11 +245,14 @@ public class WortController implements ActionListener, DocumentListener, KeyList
                  UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }
-            // Erstelle neuen WortTrainer mit einer Liste von Wörtern
-            WortListe wortListe = new WortListe("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
-            wortListe.addWortEintrag("Hamster", "https://images5.alphacoders.com/577/thumb-1920-577864.jpg");
-            wortListe.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
-            WortTrainer wortTrainerNew = new WortTrainer(wortListe);
-            new WortController(wortTrainerNew);
+        // Erstelle neuen WortTrainer mit einer Liste von Wörtern
+        WortListe wortListe = new WortListe("Papagei", "https://www.vetline.de/sites/default/files/2021-02/wellensittich.jpeg");
+        wortListe.addWortEintrag("Hamster", "https://images5.alphacoders.com/577/thumb-1920-577864.jpg");
+        wortListe.addWortEintrag("Fische", "https://wallpapers.com/images/hd/tropical-fish-with-corals-krz941d7wbb0jz08.jpg");
+        wortListe.addWortEintrag("Hai", "https://s1.1zoom.me/b4850/625/Sharks_Underwater_world_564459_1920x1080.jpg");
+        wortListe.addWortEintrag("Hund", "https://s1.1zoom.me/b4452/667/Dogs_Golden_Retriever_Tongue_561568_1920x1080.jpg");
+        wortListe.addWortEintrag("Katze", "https://s1.1zoom.me/b5050/687/Cats_Kittens_Cute_Glance_Bokeh_585449_1920x1080.jpg");
+        WortTrainer wortTrainerNew = new WortTrainer(wortListe);
+        new WortController(wortTrainerNew);
     }
 }

@@ -159,8 +159,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Konstruktor</div>
 <div class="table-header col-last">Beschreibung</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(bgogoladze.Controller.WortController,javax.swing.ImageIcon,int,int)" class="member-name-link">WortPanel</a><wbr>(<a href="../Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a>&nbsp;wortController,
- <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(bgogoladze.Controller.WortController,int,int)" class="member-name-link">WortPanel</a><wbr>(<a href="../Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a>&nbsp;wortController,
  int&nbsp;correct,
  int&nbsp;amount)</code></div>
 <div class="col-last even-row-color">
@@ -189,13 +188,13 @@ loadScripts(document, 'script');</script>
  des Textfeldes und liefert einen String zurück</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh(boolean,int,int,javax.swing.ImageIcon)" class="member-name-link">refresh</a><wbr>(boolean&nbsp;isCorrect,
- int&nbsp;correctCounter,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refresh(int,int,int)" class="member-name-link">refresh</a><wbr>(int&nbsp;correctCounter,
  int&nbsp;amountCounter,
- <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture)</code></div>
+ int&nbsp;wrongCounter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
- auf dem laufenden zu halten, was hier ermöglicht wird</div>
+ auf dem laufenden zu halten, was hier ermöglicht wird
+     //@param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
@@ -205,8 +204,14 @@ loadScripts(document, 'script');</script>
  auf 0 gehen und das Textfeld leer ist.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImage(javax.swing.ImageIcon)" class="member-name-link">setImage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setButtonEnabled(boolean)" class="member-name-link">setButtonEnabled</a><wbr>(boolean&nbsp;enabled)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Diese Methode setButtonEnabled setzt den Button für das nächste Wort auf enabled oder disabled
+ basierend auf den boolean Wert</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImageUrl(java.lang.String)" class="member-name-link">setImageUrl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Diese Methode setImage setzt das als Parameter übergebene Bild für das Attribut
  image um dieses dann in ein JLabel zu setzen welcher wie ein "Placeholder" wirkt</div>
 </div>
@@ -240,10 +245,9 @@ loadScripts(document, 'script');</script>
 <h2>Konstruktordetails</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(bgogoladze.Controller.WortController,javax.swing.ImageIcon,int,int)">
+<section class="detail" id="&lt;init&gt;(bgogoladze.Controller.WortController,int,int)">
 <h3>WortPanel</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">WortPanel</span><wbr><span class="parameters">(<a href="../Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a>&nbsp;wortController,
- <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture,
  int&nbsp;correct,
  int&nbsp;amount)</span></div>
 <div class="block">Dieser Konstruktor ist der Standardkonstruktor der keine Parameter
@@ -252,7 +256,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameter:</dt>
 <dd><code>wortController</code> - ist der Controller welcher alles verwaltet</dd>
-<dd><code>picture</code> - ist das zu setzende Bild</dd>
 <dd><code>correct</code> - ist die Anzahl an korrekten Antworten</dd>
 <dd><code>amount</code> - ist die Anzahl an gestellten Fragen</dd>
 </dl>
@@ -267,14 +270,17 @@ loadScripts(document, 'script');</script>
 <h2>Methodendetails</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setImage(javax.swing.ImageIcon)">
-<h3>setImage</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture)</span></div>
+<section class="detail" id="setImageUrl(java.lang.String)">
+<h3>setImageUrl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImageUrl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="Klasse oder Schnittstelle in java.lang" class="external-link">String</a>&nbsp;url)</span>
+                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/net/MalformedURLException.html" title="Klasse oder Schnittstelle in java.net" class="external-link">MalformedURLException</a></span></div>
 <div class="block">Diese Methode setImage setzt das als Parameter übergebene Bild für das Attribut
  image um dieses dann in ein JLabel zu setzen welcher wie ein "Placeholder" wirkt</div>
 <dl class="notes">
 <dt>Parameter:</dt>
-<dd><code>picture</code> - setzt das Bild welches als Parameter gegeben ist auf das Attribut</dd>
+<dd><code>url</code> - ist die URL des Bildes in der GUI</dd>
+<dt>Löst aus:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/net/MalformedURLException.html" title="Klasse oder Schnittstelle in java.net" class="external-link">MalformedURLException</a></code> - wenn die URL ungültig ist</dd>
 </dl>
 </section>
 </li>
@@ -291,20 +297,31 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="refresh(boolean,int,int,javax.swing.ImageIcon)">
-<h3>refresh</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(boolean&nbsp;isCorrect,
- int&nbsp;correctCounter,
- int&nbsp;amountCounter,
- <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/ImageIcon.html" title="Klasse oder Schnittstelle in javax.swing" class="external-link">ImageIcon</a>&nbsp;picture)</span></div>
-<div class="block">Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
- auf dem laufenden zu halten, was hier ermöglicht wird</div>
+<section class="detail" id="setButtonEnabled(boolean)">
+<h3>setButtonEnabled</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setButtonEnabled</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="block">Diese Methode setButtonEnabled setzt den Button für das nächste Wort auf enabled oder disabled
+ basierend auf den boolean Wert</div>
 <dl class="notes">
 <dt>Parameter:</dt>
-<dd><code>isCorrect</code> - ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll</dd>
+<dd><code>enabled</code> - ist der boolean Wert der entscheidet</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="refresh(int,int,int)">
+<h3>refresh</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refresh</span><wbr><span class="parameters">(int&nbsp;correctCounter,
+ int&nbsp;amountCounter,
+ int&nbsp;wrongCounter)</span></div>
+<div class="block">Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
+ auf dem laufenden zu halten, was hier ermöglicht wird
+     //@param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll</div>
+<dl class="notes">
+<dt>Parameter:</dt>
 <dd><code>correctCounter</code> - ist der Zähler für die korrekte Anzahl an Wörtern</dd>
 <dd><code>amountCounter</code> - ist der Zähler für die Anzahl an eingegebenen Wörtern</dd>
-<dd><code>picture</code> - ist das Image welches hinzugefügt werden soll</dd>
+<dd><code>wrongCounter</code> - ist der Zähler für die Anzahl an falschen Eingaben</dd>
 </dl>
 </section>
 </li>

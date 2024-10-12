@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestWorttrainerPersistence" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-11T18:49:46" hostname="LAPTOP-0KEN8UFH" time="0.082">
-  <properties/>
-  <testcase name="U03 - Testen der Getter und Setter des Speicherpfads" classname="TestWorttrainerPersistence" time="0.082"/>
-  <system-out><![CDATA[WortTrainer Session erfolgreich gespeichert unter: ./newPath.json
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

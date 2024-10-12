@@ -49,11 +49,14 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">Alle&nbsp;Klassen&nbsp;und&nbsp;Schnittstellen</a><span class="vertical-separator">|</span><a href="allpackages-index.html">Alle&nbsp;Packages</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialisierte&nbsp;Form</a>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">Alle&nbsp;Klassen&nbsp;und&nbsp;Schnittstellen</a><span class="vertical-separator">|</span><a href="allpackages-index.html">Alle&nbsp;Packages</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialisierte&nbsp;Form</a>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="bgogoladze/Controller/WortController.html#actionPerformed(java.awt.event.ActionEvent)" class="member-name-link">actionPerformed(ActionEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Das ist der ActionListener wo die Action performed
+ wird mittels Steuerungsmethoden für Buttons</div>
+</dd>
 <dt><a href="bgogoladze/Model/WortListe.html#addWortEintrag(java.lang.String,java.lang.String)" class="member-name-link">addWortEintrag(String, String)</a> - Methode in Klasse bgogoladze.Model.<a href="bgogoladze/Model/WortListe.html" title="Klasse in bgogoladze.Model">WortListe</a></dt>
 <dd>
 <div class="block">Diese Methode addWortEintrag ist zum hinzufügen von Schlüssel-Wert Paaren zur Map</div>
@@ -74,6 +77,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
+<dt><a href="bgogoladze/Controller/WortController.html#changedUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">changedUpdate(DocumentEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+</dd>
 <dt><a href="bgogoladze/Model/WortTrainer.html#check(java.lang.String)" class="member-name-link">check(String)</a> - Methode in Klasse bgogoladze.Model.<a href="bgogoladze/Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></dt>
 <dd>
 <div class="block">Diese Methode check checkt ob ein übergebenes Wort mit dem Wort vom aktuellen Eintrag exakt übereinstimmt</div>
@@ -111,6 +120,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Getter-Methode des Attributs aktuell, welche den
  derzeitigen Wert von aktuell liefert</div>
 </dd>
+<dt><a href="bgogoladze/Model/WortTrainer.html#getFalsche()" class="member-name-link">getFalsche()</a> - Methode in Klasse bgogoladze.Model.<a href="bgogoladze/Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></dt>
+<dd>
+<div class="block">Getter-Methode des Attributs falsch, welche den
+ aktuellen Wert von falsch liefert</div>
+</dd>
 <dt><a href="bgogoladze/Model/WortTrainer.html#getKorrekt()" class="member-name-link">getKorrekt()</a> - Methode in Klasse bgogoladze.Model.<a href="bgogoladze/Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></dt>
 <dd>
 <div class="block">Getter-Methode des Attributs korrekt, welche den
@@ -142,18 +156,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Getter-Methode des Attributs wortListe, welche die WortListe zurückgibt welche durch den WortTrainer verwendet wird</div>
 </dd>
 </dl>
+<h2 class="title" id="I:I">I</h2>
+<dl class="index">
+<dt><a href="bgogoladze/Controller/WortController.html#insertUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">insertUpdate(DocumentEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
+</dd>
+</dl>
 <h2 class="title" id="I:K">K</h2>
 <dl class="index">
 <dt><a href="bgogoladze/Controller/WortController.html#keyPressed(java.awt.event.KeyEvent)" class="member-name-link">keyPressed(KeyEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="bgogoladze/Controller/WortController.html#keyReleased(java.awt.event.KeyEvent)" class="member-name-link">keyReleased(KeyEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
 <dd>
-<div class="block">Invoked when a key has been released.</div>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/KeyEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>KeyEvent</code></a>
+ Wird ausgelöst, wenn eine Taste freigegeben wurde, in diesem Fall ENTER.</div>
 </dd>
 <dt><a href="bgogoladze/Controller/WortController.html#keyTyped(java.awt.event.KeyEvent)" class="member-name-link">keyTyped(KeyEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when a key has been typed.</div>
-</dd>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:L">L</h2>
 <dl class="index">
@@ -174,7 +197,7 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="bgogoladze/Controller/WortController.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Statische Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
 <dd>
-<div class="block">Ausführen des Controllers zum Finale</div>
+<div class="block">Das ist die main-Methode in der die WortController Instanz erzeugt wird</div>
 </dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
@@ -183,10 +206,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Diese Methode randomWortEintrag liefert einen zufälligen Worteintrag welcher drüber aufgerufen werden kann.</div>
 </dd>
-<dt><a href="bgogoladze/View/WortPanel.html#refresh(boolean,int,int,javax.swing.ImageIcon)" class="member-name-link">refresh(boolean, int, int, ImageIcon)</a> - Methode in Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
+<dt><a href="bgogoladze/View/WortPanel.html#refresh(int,int,int)" class="member-name-link">refresh(int, int, int)</a> - Methode in Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
 <dd>
 <div class="block">Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
- auf dem laufenden zu halten, was hier ermöglicht wird</div>
+ auf dem laufenden zu halten, was hier ermöglicht wird
+     //@param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll</div>
+</dd>
+<dt><a href="bgogoladze/Controller/WortController.html#removeUpdate(javax.swing.event.DocumentEvent)" class="member-name-link">removeUpdate(DocumentEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentListener.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/javax/swing/event/DocumentEvent.html" title="Klasse oder Schnittstelle in javax.swing.event" class="external-link"><code>DocumentEvent</code></a>
+ Methoden für DocumentListener (zum Aktivieren/Deaktivieren des "Nächstes Wort"-Buttons)</div>
 </dd>
 <dt><a href="bgogoladze/Model/WortTrainer.html#reset()" class="member-name-link">reset()</a> - Methode in Klasse bgogoladze.Model.<a href="bgogoladze/Model/WortTrainer.html" title="Klasse in bgogoladze.Model">WortTrainer</a></dt>
 <dd>
@@ -211,7 +241,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Setter-Methode des Attributs aktuell, welche den
  neuen Wert für aktuell setzt - NUR FÜR TESTZWECKE</div>
 </dd>
-<dt><a href="bgogoladze/View/WortPanel.html#setImage(javax.swing.ImageIcon)" class="member-name-link">setImage(ImageIcon)</a> - Methode in Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
+<dt><a href="bgogoladze/View/WortPanel.html#setButtonEnabled(boolean)" class="member-name-link">setButtonEnabled(boolean)</a> - Methode in Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
+<dd>
+<div class="block">Diese Methode setButtonEnabled setzt den Button für das nächste Wort auf enabled oder disabled
+ basierend auf den boolean Wert</div>
+</dd>
+<dt><a href="bgogoladze/View/WortPanel.html#setImageUrl(java.lang.String)" class="member-name-link">setImageUrl(String)</a> - Methode in Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
 <dd>
 <div class="block">Diese Methode setImage setzt das als Parameter übergebene Bild für das Attribut
  image um dieses dann in ein JLabel zu setzen welcher wie ein "Placeholder" wirkt</div>
@@ -263,34 +298,24 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:W">W</h2>
 <dl class="index">
 <dt><a href="bgogoladze/Controller/WortController.html#windowActivated(java.awt.event.WindowEvent)" class="member-name-link">windowActivated(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when the Window is set to be the active Window.</div>
-</dd>
-<dt><a href="bgogoladze/Controller/WortController.html#windowClosed(java.awt.event.WindowEvent)" class="member-name-link">windowClosed(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when a window has been closed as the result
- of calling dispose on the window.</div>
-</dd>
-<dt><a href="bgogoladze/Controller/WortController.html#windowClosing(java.awt.event.WindowEvent)" class="member-name-link">windowClosing(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="bgogoladze/Controller/WortController.html#windowClosed(java.awt.event.WindowEvent)" class="member-name-link">windowClosed(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="bgogoladze/Controller/WortController.html#windowClosing(java.awt.event.WindowEvent)" class="member-name-link">windowClosing(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowListener.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowListener</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.desktop/java/awt/event/WindowEvent.html" title="Klasse oder Schnittstelle in java.awt.event" class="external-link"><code>WindowEvent</code></a>
+ Wird aufgerufen, wenn der Benutzer versucht, das Fenster
+ über das Systemmenü des Fensters zu schließen.</div>
+</dd>
 <dt><a href="bgogoladze/Controller/WortController.html#windowDeactivated(java.awt.event.WindowEvent)" class="member-name-link">windowDeactivated(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when a Window is no longer the active Window.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><a href="bgogoladze/Controller/WortController.html#windowDeiconified(java.awt.event.WindowEvent)" class="member-name-link">windowDeiconified(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when a window is changed from a minimized
- to a normal state.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><a href="bgogoladze/Controller/WortController.html#windowIconified(java.awt.event.WindowEvent)" class="member-name-link">windowIconified(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked when a window is changed from a normal to a
- minimized state.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><a href="bgogoladze/Controller/WortController.html#windowOpened(java.awt.event.WindowEvent)" class="member-name-link">windowOpened(WindowEvent)</a> - Methode in Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
-<dd>
-<div class="block">Invoked the first time a window is made visible.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><a href="bgogoladze/Controller/WortController.html" class="type-name-link" title="Klasse in bgogoladze.Controller">WortController</a> - Klasse in <a href="bgogoladze/Controller/package-summary.html">bgogoladze.Controller</a></dt>
 <dd>
 <div class="block">Diese Klasse namens WortController ist in MVC die sogenannte Control-Class, welche
@@ -300,7 +325,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="bgogoladze/Controller/WortController.html#%3Cinit%3E(bgogoladze.Model.WortTrainer)" class="member-name-link">WortController(WortTrainer)</a> - Konstruktor für Klasse bgogoladze.Controller.<a href="bgogoladze/Controller/WortController.html" title="Klasse in bgogoladze.Controller">WortController</a></dt>
 <dd>
-<div class="block">Konstruktor, der die Model-Klasse WortTrainer initialisiert und eine gültige Auswahl trifft</div>
+<div class="block">Dies ist der Standardkonstruktor welcher einen Worttrainer als Parameter übernimmt und
+ alles managed was es im MVC Modell gibt</div>
 </dd>
 <dt><a href="bgogoladze/View/WortFrame.html" class="type-name-link" title="Klasse in bgogoladze.View">WortFrame</a> - Klasse in <a href="bgogoladze/View/package-summary.html">bgogoladze.View</a></dt>
 <dd>
@@ -333,7 +359,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Diese Klasse namens Wortpanel ist ein Panel und erbt daher von der Superklasse JPanel
  um auch alle Eigenschaften und Methoden eines GUI-Panel ansich zu nehmen und zu verwenden.</div>
 </dd>
-<dt><a href="bgogoladze/View/WortPanel.html#%3Cinit%3E(bgogoladze.Controller.WortController,javax.swing.ImageIcon,int,int)" class="member-name-link">WortPanel(WortController, ImageIcon, int, int)</a> - Konstruktor für Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
+<dt><a href="bgogoladze/View/WortPanel.html#%3Cinit%3E(bgogoladze.Controller.WortController,int,int)" class="member-name-link">WortPanel(WortController, int, int)</a> - Konstruktor für Klasse bgogoladze.View.<a href="bgogoladze/View/WortPanel.html" title="Klasse in bgogoladze.View">WortPanel</a></dt>
 <dd>
 <div class="block">Dieser Konstruktor ist der Standardkonstruktor der keine Parameter
  enthält und ein einfaches GUI erstellt mit meinem Namen als Titel
@@ -353,7 +379,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Dies ist der Konstruktor bei dem die übergebenen Parameter in die Attrribute gespeichert werden</div>
 </dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">Alle&nbsp;Klassen&nbsp;und&nbsp;Schnittstellen</a><span class="vertical-separator">|</span><a href="allpackages-index.html">Alle&nbsp;Packages</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialisierte&nbsp;Form</a></main>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:K">K</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">Alle&nbsp;Klassen&nbsp;und&nbsp;Schnittstellen</a><span class="vertical-separator">|</span><a href="allpackages-index.html">Alle&nbsp;Packages</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialisierte&nbsp;Form</a></main>
 </div>
 </div>
 </body>

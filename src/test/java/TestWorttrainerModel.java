@@ -162,7 +162,7 @@ public class TestWorttrainerModel {
     public void statisticTest() {
         this.wortTrainer.setAbgefragt(48);
         this.wortTrainer.setKorrekt(47);
-        assertEquals("{\n  \"Zweck\": \"Worttrainer Statistik\",\n  \"Abgefragt\": 48,\n  \"Korrekt\": 47,\n  \"Score\": \"97,92\",\n  \"Kommentar\": \"Super mach weiter so!\"\n}", this.wortTrainer.getStatistic(), "Die Statistik stimmt nicht überein?");
+        assertEquals("{\n  \"Zweck\": \"Worttrainer Statistik\",\n  \"Abgefragt\": 48,\n  \"Korrekte\": 47,\n  \"Falsche\": 1,\n  \"Score\": \"97,92\",\n  \"Kommentar\": \"Super mach weiter so!\"\n}", this.wortTrainer.getStatistic(), "Die Statistik stimmt nicht überein?");
     }
 
     @Test
