@@ -22,6 +22,13 @@ public class WortFrame extends JFrame {
     public WortFrame(WortPanel layoutPanel) {
         super("[GK] 9a.1: Worttrainer Reloaded");
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Look And Feel
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                 UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         super.setJMenuBar(createMenuBar());
         this.add(layoutPanel);
         this.setLocationRelativeTo(null);

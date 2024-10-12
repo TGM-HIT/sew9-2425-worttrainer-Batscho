@@ -4,6 +4,8 @@ import bgogoladze.Controller.WortController;
 import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Diese Klasse namens Wortpanel ist ein Panel und erbt daher von der Superklasse JPanel
@@ -19,21 +21,29 @@ public class WortPanel extends JPanel {
      */
     private WortController wortController;
     /**
-     * bAdd
+     * bNext
      */
-    private final JButton bAdd = new JButton("Wort hinzufügen");
+    private final JButton bNext = new JButton("Nächstes Wort");
     /**
-     * bReset
+     * bSave
      */
-    private final JButton bReset = new JButton("Zurücksetzen");
+    private final JButton bSave = new JButton("Speichern");
+    /**
+     * bLoad
+     */
+    private final JButton bLoad = new JButton("Laden");
     /**
      * textField
      */
     private final JTextField textField = new JTextField();
     /**
+     * imageLabel
+     */
+    private final JLabel imageLabel = new JLabel(this.image);
+    /**
      * image
      */
-    private final JLabel image = new JLabel();
+    private ImageIcon image = new ImageIcon();
     /**
      * question
      */
@@ -70,46 +80,53 @@ public class WortPanel extends JPanel {
         this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         this.textField.addKeyListener(this.wortController);
-        this.bAdd.setActionCommand("add");
-        this.bAdd.addActionListener(this.wortController);
-        this.bReset.setActionCommand("reset");
-        this.bReset.addActionListener(this.wortController);
+        this.bNext.setActionCommand("next");
+        this.bNext.addActionListener(this.wortController);
+        this.bSave.setActionCommand("save");
+        this.bSave.addActionListener(this.wortController);
+        this.bLoad.setActionCommand("load");
+        this.bLoad.addActionListener(this.wortController);
+        setButtonEnabled(!this.getTextfield().isBlank());
+        this.textField.getDocument().addDocumentListener(this.wortController);
 
         this.correctCounter.setText(String.valueOf(correct));
         this.amountCounter.setText(String.valueOf(amount));
 
         // Oberer Bereich der GUI
-        JPanel oben = new JPanel(new GridLayout(2, 1, 0, 10));
+        JPanel oben = new JPanel(new GridLayout(2, 2, 0, 10));
         oben.add(this.question);
         oben.add(this.textField);
+        oben.add(this.bNext);
 
         // Mittlerer Bereich der GUI
-        setImage(picture);
-        this.image.setHorizontalAlignment(this.getWidth() / 2);
+        JPanel mitte = new JPanel();
+        this.imageLabel.setHorizontalAlignment(this.getWidth() / 2);
+        mitte.add(this.imageLabel);
+
 
         // Unterer Bereich der GUI
         JPanel unten = new JPanel(new GridLayout(2, 3, 0, 10));
         unten.add(this.correct);
         unten.add(this.correctCounter);
-        unten.add(this.bReset);
+        unten.add(this.bSave);
         unten.add(this.amount);
         unten.add(this.amountCounter);
-        unten.add(this.bAdd);
+        unten.add(this.bLoad);
 
         // Hinzufügen der Container zum Top-Level-Container
         super.add(oben, BorderLayout.PAGE_START);
-        super.add(this.image, BorderLayout.CENTER);
+        super.add(mitte, BorderLayout.CENTER);
         super.add(unten, BorderLayout.PAGE_END);
     }
 
     /**
      * Diese Methode setImage setzt das als Parameter übergebene Bild für das Attribut
      * image um dieses dann in ein JLabel zu setzen welcher wie ein "Placeholder" wirkt
-     * @param picture setzt das Bild welches als Parameter gegeben ist auf das Attribut
+     * @param url ist die URL des Bildes in der GUI
      */
-    public void setImage(ImageIcon picture) {
-        Image img = picture.getImage().getScaledInstance(650, 450, Image.SCALE_SMOOTH);
-        this.image.setIcon(new ImageIcon(img));
+    public void setImageUrl(String url) throws MalformedURLException {
+        this.image.getImage().getScaledInstance(650, 450, Image.SCALE_SMOOTH);
+        this.image = new ImageIcon(new URL(url));
     }
 
     /**
@@ -122,16 +139,25 @@ public class WortPanel extends JPanel {
     }
 
     /**
+     * Diese Methode setButtonEnabled setzt den Button für das nächste Wort auf enabled oder disabled
+     * basierend auf den boolean Wert
+     * @param enabled ist der boolean Wert der entscheidet
+     */
+    public void setButtonEnabled(boolean enabled) {
+        this.bNext.setEnabled(enabled);
+    }
+
+    /**
      * Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
      * auf dem laufenden zu halten, was hier ermöglicht wird
      * @param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll
      * @param correctCounter ist der Zähler für die korrekte Anzahl an Wörtern
      * @param amountCounter ist der Zähler für die Anzahl an eingegebenen Wörtern
-     * @param picture ist das Image welches hinzugefügt werden soll
+     * @param url ist das Image welches hinzugefügt werden soll
      */
-    public void refresh(boolean isCorrect, int correctCounter, int amountCounter, ImageIcon picture) {
+    public void refresh(boolean isCorrect, int correctCounter, int amountCounter, String url) throws MalformedURLException {
         this.textField.setText("");
-        if (isCorrect) setImage(picture);
+        if (isCorrect) setImage(url);
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
     }
@@ -145,5 +171,6 @@ public class WortPanel extends JPanel {
         this.textField.setText("");
         this.correctCounter.setText("0");
         this.amountCounter.setText("0");
+        this.image = new ImageIcon();
     }
 }
