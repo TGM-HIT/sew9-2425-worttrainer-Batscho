@@ -127,6 +127,7 @@ public class WortPanel extends JPanel {
     public void setImageUrl(String url) throws MalformedURLException {
         this.image.getImage().getScaledInstance(650, 450, Image.SCALE_SMOOTH);
         this.image = new ImageIcon(new URL(url));
+        this.imageLabel.setIcon(this.image);
     }
 
     /**
@@ -157,7 +158,7 @@ public class WortPanel extends JPanel {
      */
     public void refresh(boolean isCorrect, int correctCounter, int amountCounter, String url) throws MalformedURLException {
         this.textField.setText("");
-        if (isCorrect) setImage(url);
+        if (isCorrect) setImageUrl(url);
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
     }

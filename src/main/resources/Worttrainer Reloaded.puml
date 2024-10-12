@@ -94,23 +94,26 @@ class TestWorttrainerModel {
 package View {
 class WortFrame {
 + WortFrame(layoutPanel : WortPanel)
-- menubar() : JMenuBar
+- createMenuBar() : JMenuBar
 + {static} main(args : Strins[]) : void
 }
 class WortPanel {
 - wortController: WortController
-- bAdd: JButton
-- bReset: JButton
+- bNext: JButton
+- bSave: JButton
+- bLoad: JButton
 - textField: JTextField
-- image: JLabel
+- imageLabel: JLabel
+- image: ImageIcon
 - question: JLabel
 - correct: JLabel
 - amount: JLabel
 - correctCounter: JLabel
 - amountCounter: JLabel
 + WortPanel(wortController: WortController, picture: ImageIcon, correct: int, amount: int)
-+ setImage(picture: ImageIcon): void
++ setImageUrl(String url): void
 + getTextfield(): String
++ setButtonEnabled(enabled : boolean) : void
 + refresh(isCorrect: boolean, correctCounter: int, amountCounter: int, picture: ImageIcon): void
 + reset(): void
 }
@@ -121,6 +124,7 @@ class WortController {
 - wortTrainer : WortTrainer
 - wortView : WortFrame
 - wortPanel : WortPanel
+- speichernUndLadenStrategie : SpeichernUndLadenStrategie
 + WortController(wortTrainer: WortTrainer)
 + actionPerformed(e: ActionEvent)
 + keyTyped(e: KeyEvent)

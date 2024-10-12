@@ -15,6 +15,8 @@ import java.io.IOException;      // Für IOException
 import java.net.MalformedURLException; // Für MalformedURLException
 import java.net.URL;             // Für URL
 import javax.imageio.ImageIO;   // Für ImageIO
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  * Diese Klasse namens WortController ist in MVC die sogenannte Control-Class, welche
@@ -24,7 +26,7 @@ import javax.imageio.ImageIO;   // Für ImageIO
  * @author Gogoladze Batschana
  * @version 11-10-2024
  */
-public class WortController implements ActionListener, KeyListener, WindowListener {
+public class WortController implements ActionListener, KeyListener, WindowListener, DocumentListener {
     /**
      * wortTrainer
      */
@@ -46,10 +48,11 @@ public class WortController implements ActionListener, KeyListener, WindowListen
     public WortController(WortTrainer wortTrainer) {
         this.wortTrainer = wortTrainer;
         // Auswahl eines gültigen Wortpaares
-        boolean ungueltigkeit = false;
+        /*boolean ungueltigkeit = false;
         while (!ungueltigkeit) {
             ungueltigkeit = this.neuerWortEintrag();
-        }
+        }*/
+
         try {
             this.wortPanel = new WortPanel(this, this.newImage(this.wortTrainer.ausgewaehlt()[1]), this.wortTrainer.getKorrekt(), this.wortTrainer.getAbgefragt());
         } catch (Exception exception) {
@@ -410,4 +413,37 @@ public class WortController implements ActionListener, KeyListener, WindowListen
      */
     @Override
     public void keyTyped(KeyEvent e) {}
+
+    /**
+     * Gives notification that there was an insert into the document.  The
+     * range given by the DocumentEvent bounds the freshly inserted region.
+     *
+     * @param e the document event
+     */
+    @Override
+    public void insertUpdate(DocumentEvent e) {
+
+    }
+
+    /**
+     * Gives notification that a portion of the document has been
+     * removed.  The range is given in terms of what the view last
+     * saw (that is, before updating sticky positions).
+     *
+     * @param e the document event
+     */
+    @Override
+    public void removeUpdate(DocumentEvent e) {
+
+    }
+
+    /**
+     * Gives notification that an attribute or set of attributes changed.
+     *
+     * @param e the document event
+     */
+    @Override
+    public void changedUpdate(DocumentEvent e) {
+
+    }
 }
