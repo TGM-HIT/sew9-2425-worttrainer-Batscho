@@ -18,13 +18,20 @@ zu zeigen und Feature für Feature durchzugehen und umzusetzen mit:
 + Schritt 4: Zyklus wiederholen
 
 ## Klassen-Hierarchie
-+ bgogoladze.Model
-  + WortListe
-  + WortTrainer
-  + SpeichernUndLadenStrategie (Interface)
-  + SpeichernUndLaden
++ bgogoladze
+  + Model
+    + WortListe
+    + WortTrainer
+    + SpeichernUndLadenStrategie (Interface)
+    + SpeichernUndLaden
+  + View
+    + WortFrame
+    + WortPanel
+  + Controller
+    + WortController
 + test
   + TestWorttrainerModel
+  + TestWorttrainerPersistence
 
 ## Verwendete Technologien
 1. ##### GitHub

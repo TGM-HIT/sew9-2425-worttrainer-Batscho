@@ -66,8 +66,8 @@ public class WortPanel extends JPanel {
      */
     public WortPanel(WortController wortController, ImageIcon picture, int correct, int amount) {
         this.wortController = wortController;
-        setLayout(new BorderLayout(20, 0));
-        setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        this.setLayout(new BorderLayout(20, 0));
+        this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         this.textField.addKeyListener(this.wortController);
         this.bAdd.setActionCommand("add");
@@ -85,7 +85,7 @@ public class WortPanel extends JPanel {
 
         // Mittlerer Bereich der GUI
         setImage(picture);
-        this.image.setHorizontalAlignment(JLabel.CENTER);
+        this.image.setHorizontalAlignment(this.getWidth() / 2);
 
         // Unterer Bereich der GUI
         JPanel unten = new JPanel(new GridLayout(2, 3, 0, 10));
@@ -97,9 +97,9 @@ public class WortPanel extends JPanel {
         unten.add(this.bAdd);
 
         // Hinzufügen der Container zum Top-Level-Container
-        add(oben, BorderLayout.PAGE_START);
-        add(this.image, BorderLayout.CENTER);
-        add(unten, BorderLayout.PAGE_END);
+        super.add(oben, BorderLayout.PAGE_START);
+        super.add(this.image, BorderLayout.CENTER);
+        super.add(unten, BorderLayout.PAGE_END);
     }
 
     /**
@@ -131,9 +131,7 @@ public class WortPanel extends JPanel {
      */
     public void refresh(boolean isCorrect, int correctCounter, int amountCounter, ImageIcon picture) {
         this.textField.setText("");
-        if (isCorrect) {
-            setImage(picture);
-        }
+        if (isCorrect) setImage(picture);
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
     }

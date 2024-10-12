@@ -21,12 +21,12 @@ public class WortFrame extends JFrame {
      */
     public WortFrame(WortPanel layoutPanel) {
         super("[GK] 9a.1: Worttrainer Reloaded");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setJMenuBar(createMenuBar());
-        add(layoutPanel);
-        setLocationRelativeTo(null);
-        setSize(1000, 800);
-        setVisible(true);
+        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super.setJMenuBar(createMenuBar());
+        this.add(layoutPanel);
+        this.setLocationRelativeTo(null);
+        this.setBounds(0,0, 1000, 800);
+        super.setVisible(true);
     }
 
     /**
@@ -38,7 +38,7 @@ public class WortFrame extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setOpaque(true);
         menuBar.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JLabel label = new JLabel("[GK] 9a.1: Worttrainer Reloaded");
+        JLabel label = new JLabel("Rechtschreibtrainer");
         label.setForeground(Color.WHITE);
         menuBar.add(label);
         menuBar.setBackground(new Color(11, 11, 161));

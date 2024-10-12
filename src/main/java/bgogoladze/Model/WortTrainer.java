@@ -22,7 +22,7 @@ public class WortTrainer {
     private String[] aktuell;           //Der aktuelle Worteintrag
     private int abgefragt;              //Die Anzahl an Wörtern die abgefragt wurden
     private int korrekt;                //Die Anzahl der abgefragten Wörter die erraten wurden
-    //private StringBuilder statistic;    //Ein abgeleitetes Attribut welches die Statistik angibt
+    private StringBuilder statistic = new StringBuilder();    //Ein abgeleitetes Attribut welches die Statistik angibt
 
     /**
      * Dies ist der Konstruktor bei dem die übergebenen Parameter in die Attrribute gespeichert werden
@@ -94,15 +94,15 @@ public class WortTrainer {
      * @return die Rückgabe des zusammengesetzten Strings aus dem ursprünglichen StringBuilder
      */
     public String getStatistic() {
-        /*double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
+        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;  // Vermeidung der Division durch 0
         this.statistic.append("\nStatistik:\n")
                 .append("Abgefragt: ").append(this.abgefragt).append("\n")
                 .append("Korrekte: ").append(this.korrekt).append("\n")
                 .append("Score: ").append(String.format("%.2f", score)).append("%\n");  // Score auf 2 Nachkommastellen formatiert
-        if(score >= 89) this.statistic.append("Super mach weiter so!");
-        else this.statistic.append("Das geht besser!");
-        return this.statistic.toString();*/
-        double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;
+        if(score >= 89) this.statistic.append("Super mach weiter so!\n");
+        else this.statistic.append("Das geht besser!\n");
+        return this.statistic.toString();
+        /*double score = this.abgefragt == 0 ? 0 : ((double) this.korrekt / this.abgefragt) * 100;
         String kommentar = score >= 89 ? "Super mach weiter so!" : "Das geht besser!";
         Map<String, Object> statistikMap = new LinkedHashMap<>();
         statistikMap.put("Zweck", "Worttrainer Statistik");
@@ -111,7 +111,7 @@ public class WortTrainer {
         statistikMap.put("Score", String.format("%.2f", score));
         statistikMap.put("Kommentar", kommentar);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(statistikMap);
+        return gson.toJson(statistikMap);*/
     }
 
     /**

@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 import bgogoladze.Model.*;
+import bgogoladze.View.WortFrame;
+import bgogoladze.View.WortPanel;
+
 import javax.swing.*;            // Für JOptionPane, JFrame, JPanel und JLabel
 import java.awt.*;               // Für Image und ImageIcon
 import java.awt.image.BufferedImage; // Für BufferedImage
@@ -22,10 +25,22 @@ import javax.imageio.ImageIO;   // Für ImageIO
  * @version 11-10-2024
  */
 public class WortController implements ActionListener, KeyListener, WindowListener {
+    /**
+     * wortTrainer
+     */
     private WortTrainer wortTrainer;
+    /**
+     * wortView
+     */
+    private WortFrame wortView;
+    /**
+     * wortPanel
+     */
+    private WortPanel wortPanel;
 
     /**
-     * Konstruktor, der die Model-Klasse WortTrainer initialisiert und eine gültige Auswahl trifft
+     * Dies ist der Konstruktor der Control-Klasse und initialisiert
+     * die Elemente der View und Model Klassen
      * @param wortTrainer Die Model-Klasse, die den Rechtschreibtrainer repräsentiert
      */
     public WortController(WortTrainer wortTrainer) {
