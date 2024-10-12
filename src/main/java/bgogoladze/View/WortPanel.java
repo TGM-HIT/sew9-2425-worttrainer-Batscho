@@ -1,7 +1,6 @@
 package bgogoladze.View;
 
 import bgogoladze.Controller.WortController;
-import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
@@ -70,11 +69,10 @@ public class WortPanel extends JPanel {
      * enthält und ein einfaches GUI erstellt mit meinem Namen als Titel
      * im Frame, und dem Inhalt.
      * @param wortController ist der Controller welcher alles verwaltet
-     * @param picture ist das zu setzende Bild
      * @param correct ist die Anzahl an korrekten Antworten
      * @param amount ist die Anzahl an gestellten Fragen
      */
-    public WortPanel(WortController wortController, ImageIcon picture, int correct, int amount) {
+    public WortPanel(WortController wortController, int correct, int amount) {
         this.wortController = wortController;
         this.setLayout(new BorderLayout(20, 0));
         this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -95,6 +93,7 @@ public class WortPanel extends JPanel {
         // Oberer Bereich der GUI
         JPanel oben = new JPanel(new GridLayout(2, 2, 0, 10));
         oben.add(this.question);
+        oben.add(new JLabel());
         oben.add(this.textField);
         oben.add(this.bNext);
 
@@ -151,14 +150,14 @@ public class WortPanel extends JPanel {
     /**
      * Diese Methode refresh (update) dient dazu um wichtige Attribute wie die Zähler immer
      * auf dem laufenden zu halten, was hier ermöglicht wird
-     * @param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll
+     //@param isCorrect ist der Wahrheitswert der dafür sorgt ob ein Image gesettet werden soll
      * @param correctCounter ist der Zähler für die korrekte Anzahl an Wörtern
      * @param amountCounter ist der Zähler für die Anzahl an eingegebenen Wörtern
-     * @param url ist das Image welches hinzugefügt werden soll
+     //@param url ist das Image welches hinzugefügt werden soll
      */
-    public void refresh(boolean isCorrect, int correctCounter, int amountCounter, String url) throws MalformedURLException {
+    public void refresh( int correctCounter, int amountCounter) {
         this.textField.setText("");
-        if (isCorrect) setImageUrl(url);
+        //if (isCorrect) setImageUrl(url);
         this.correctCounter.setText(String.valueOf(correctCounter));
         this.amountCounter.setText(String.valueOf(amountCounter));
     }

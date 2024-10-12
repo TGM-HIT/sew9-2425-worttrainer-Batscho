@@ -17,6 +17,15 @@ WortController .. N1
 N1 .. WortPanel
 WortController "*" --> "1" WortTrainer : -wortTrainer
 WortController "*" --> "1" SpeichernUndLaden
+interface ActionListener
+interface DocumentListener
+interface KeyListener
+interface WindowListener
+WortController ..|> ActionListener : <<implements>>
+WortController ..|> DocumentListener : <<implements>>
+WortController ..|> KeyListener : <<implements>>
+WortController ..|> WindowListener : <<implements>>
+
 
 package Model {
 class WortListe {
@@ -110,11 +119,11 @@ class WortPanel {
 - amount: JLabel
 - correctCounter: JLabel
 - amountCounter: JLabel
-+ WortPanel(wortController: WortController, picture: ImageIcon, correct: int, amount: int)
++ WortPanel(wortController: WortController, correct: int, amount: int)
 + setImageUrl(String url): void
 + getTextfield(): String
 + setButtonEnabled(enabled : boolean) : void
-+ refresh(isCorrect: boolean, correctCounter: int, amountCounter: int, picture: ImageIcon): void
++ refresh(correctCounter: int, amountCounter: int): void
 + reset(): void
 }
 }
@@ -123,24 +132,26 @@ package Controller {
 class WortController {
 - wortTrainer : WortTrainer
 - wortView : WortFrame
-- wortPanel : WortPanel
-- speichernUndLadenStrategie : SpeichernUndLadenStrategie
-+ WortController(wortTrainer: WortTrainer)
-+ actionPerformed(e: ActionEvent)
-+ keyTyped(e: KeyEvent)
-+ keyPressed(e: KeyEvent)
-+ keyReleased(e: KeyEvent)
-+ windowOpened(e: WindowEvent)
-+ windowClosing(e: WindowEvent)
-+ windowClosed(e: WindowEvent)
-+ windowIconified(e: WindowEvent)
-+ windowDeiconified(e: WindowEvent)
-+ windowActivated(e: WindowEvent)
-+ windowDeactivated(e: WindowEvent)
-- existence(path: String): boolean
-- neuerWortEintrag(): boolean
-- newImage(path: String): ImageIcon
-+ main(args: String[])
+- wortPanel : WortPane
+- speicherStrategie : SpeichernUndLadenStrategie
++ WortController(wortTrainer : WortTrainer)
+- updateImage() : void
+- checkUserInput() : void
++ actionPerformed(e : ActionEvent) : void
++ insertUpdate(e : DocumentEvent) : void
++ removeUpdate(e : DocumentEvent) : void
++ changedUpdate(e : DocumentEvent) : void
++ keyReleased(e : KeyEvent) : void
++ keyTyped(e : KeyEvent) : void
++ keyPressed(e : KeyEvent) : void
++ windowOpened(e : WindowEvent) : void
++ windowClosing(e : WindowEvent) : void
++ windowClosed(e : WindowEvent) : void
++ windowIconified(e : WindowEvent) : void
++ windowDeiconified(e : WindowEvent) : void
++ windowActivated(e : WindowEvent) : void
++ windowDeactivated(e : WindowEvent) : void
++ main(args : String[]) : void
 }
 }
 @enduml

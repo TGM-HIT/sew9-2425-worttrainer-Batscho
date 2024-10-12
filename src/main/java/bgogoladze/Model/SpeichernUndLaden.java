@@ -17,7 +17,7 @@ import java.io.FileWriter;
  * @version 11-10-2024
  */
 public class SpeichernUndLaden implements SpeichernUndLadenStrategie {
-    private String speicherpfad;
+    private String speicherpfad;            // Ist der Speicherpfad für die Speicher- und Ladestrategie
 
     /**
      * Konstruktor, der einen Pfad für das Speichern setzt.
