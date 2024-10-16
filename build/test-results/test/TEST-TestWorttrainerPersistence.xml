@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestWorttrainerPersistence" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-16T12:26:15" hostname="LAPTOP-0KEN8UFH" time="0.205">
+  <properties/>
+  <testcase name="U01 - Testen, ob das Speichern einer WortTrainer-Session überhaupt funktioniert" classname="TestWorttrainerPersistence" time="0.165"/>
+  <testcase name="U03 - Testen der Getter und Setter des Speicherpfads" classname="TestWorttrainerPersistence" time="0.01"/>
+  <testcase name="U02 - Testen der Laden-Funktion einer gespeicherten WortTrainer-Session" classname="TestWorttrainerPersistence" time="0.026"/>
+  <system-out><![CDATA[WortTrainer Session erfolgreich gespeichert unter: src/main/resources/worttrainer_session.json
+WortTrainer Session erfolgreich gespeichert unter: ./newPath.json
+WortTrainer Session erfolgreich gespeichert unter: src/main/resources/worttrainer_session.json
+WortTrainer Session erfolgreich geladen
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

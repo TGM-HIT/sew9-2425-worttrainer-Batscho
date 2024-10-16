@@ -184,11 +184,11 @@ public class WortController implements ActionListener, DocumentListener, KeyList
      */
     @Override
     public void keyReleased(KeyEvent e) {
-        /*if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             this.wortTrainer.check(this.wortPanel.getTextfield());
             this.wortPanel.refresh(this.wortTrainer.getKorrekt(), this.wortTrainer.getAbgefragt(), this.wortTrainer.getFalsche());
             this.updateImage();
-        }*/
+        }
     }
 
     @Override
